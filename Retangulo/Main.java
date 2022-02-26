@@ -4,7 +4,6 @@ public class Main {
     public static final Scanner sc = new Scanner(System.in);
     public static Retangulo retangulo1 = new Retangulo();
     public static Retangulo retangulo2 = new Retangulo();
-
     public static void main(String[] args) {
         double base, altura;
         int i = 0;
