@@ -1,3 +1,4 @@
+package Funcionario;
 public class Funcionario {
     public String nome;
     public double salarioBruto, valorComissao, imposto;
