@@ -1,3 +1,4 @@
+package Retangulo;
 import java.util.Scanner;
 
 public class Main {
