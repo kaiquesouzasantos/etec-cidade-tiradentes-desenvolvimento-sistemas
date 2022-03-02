@@ -5,8 +5,8 @@ public class DesafioRevisao {
     private final Scanner in = new Scanner(System.in);
     private int anoNascimento = 0;
     private int anoAtual = 0;
-    private String opcaoContinua = "";
-    private String resultado = "";
+    private String opcaoContinua;
+    private String resultado;
 
 
     public void idadeDesafio(){
