@@ -40,7 +40,7 @@ public class Main {
 			conta.depositar(deposito);
 		}
 		
-		System.out.print("\nSALDO EM CONTA: "+conta.saldoConta);
+		System.out.print("\nSALDO EM CONTA: R$"+conta.saldoConta);
 	}
 	
 	public static void contaCorrente() {
