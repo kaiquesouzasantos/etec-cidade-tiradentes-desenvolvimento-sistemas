@@ -17,7 +17,7 @@ public class Main {
 			System.out.print("DIGITE A QUANTIDADE DE PATAS: ");
 			int quantPatas = in.nextInt();
 			
-			System.out.print("DIGITE O PESO: ");
+			System.out.print("DIGITE O PESO EM KG(QUILOGRAMA): ");
 			double peso = in.nextDouble();
 			
 			if(cont == 0) {
