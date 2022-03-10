@@ -12,6 +12,8 @@ public class Conta {
 	public void sacar(double saqueValor) {
 		if(saqueValor <= this.saldoConta) {
 			this.saldoConta -= saqueValor;
+		}else{
+			System.out.print("SALDO INSUFICIENTE - A OPERACAO NAO PODE SER CONCLUIDA!\n");
 		}
 	}
 }
