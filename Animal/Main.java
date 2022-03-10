@@ -8,12 +8,10 @@ public class Main {
 	public static Animal jumento = new Animal();
 	
 	public static void main(String[] args) {
+		System.out.print("======== ANIMAL ========");
 		int cont = 0;
 		while(cont < 3) {
-			System.out.print("DIGITE O NOME DO ANIMAL: ");
-			String nome = in.next();
-			
-			System.out.print("DIGITE A ESPÉCIE: ");
+			System.out.print("\nDIGITE A ESPÉCIE: ");
 			String especie = in.next();
 			
 			System.out.print("DIGITE A QUANTIDADE DE PATAS: ");
@@ -23,17 +21,14 @@ public class Main {
 			double peso = in.nextDouble();
 			
 			if(cont == 0) {
-				pato.nome = nome;
 				pato.especie = especie;
 				pato.quantPatas = quantPatas;
 				pato.peso = peso;
 			}else if(cont == 1) {
-				ganso.nome = nome;
 				ganso.especie = especie;
 				ganso.quantPatas = quantPatas;
 				ganso.peso = peso;
 			}else if(cont == 2){
-				jumento.nome = nome;
 				jumento.especie = especie;
 				jumento.quantPatas = quantPatas;
 				jumento.peso = peso;
