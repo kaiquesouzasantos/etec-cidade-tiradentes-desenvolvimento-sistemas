@@ -10,6 +10,6 @@ public class ContaCorrente {
 	}
 	
 	public void consultarConta() {
-		System.out.print("\nSALDO: "+this.saldoConta+"\nCREDITO: "+this.creditoConta);
+		System.out.print("\nSALDO: R$"+this.saldoConta+"\nCREDITO: R$"+this.creditoConta);
 	}
 }
