@@ -9,14 +9,13 @@ public class Main {
 	
 	public static void main(String[] args) {
 		System.out.print("======== ANIMAL ========");
+		
 		int cont = 0;
 		while(cont < 3) {
 			System.out.print("\nDIGITE A ESPÉCIE: ");
 			String especie = in.next();
-			
 			System.out.print("DIGITE A QUANTIDADE DE PATAS: ");
 			int quantPatas = in.nextInt();
-			
 			System.out.print("DIGITE O PESO EM KG(QUILOGRAMA): ");
 			double peso = in.nextDouble();
 			
@@ -35,7 +34,6 @@ public class Main {
 			}
 			cont++;
 		}
-		
 		pato.imprimirValoresAnimal();
 		ganso.imprimirValoresAnimal();
 		jumento.imprimirValoresAnimal();
