@@ -39,7 +39,6 @@ public class Main {
 			double deposito = in.nextDouble();
 			conta.depositar(deposito);
 		}
-		
 		System.out.print("\nSALDO EM CONTA: R$"+conta.saldoConta);
 	}
 	
