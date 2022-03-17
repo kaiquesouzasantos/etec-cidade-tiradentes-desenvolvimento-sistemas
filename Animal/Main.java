@@ -3,16 +3,17 @@ import java.util.Scanner;
 
 public class Main {
 	public static final Scanner in = new Scanner(System.in);
-	public static Animal pato = new Animal();
-	public static Animal ganso = new Animal();
-	public static Animal jumento = new Animal();
+	public static Animal primeiroAnimal = new Animal();
+	public static Animal segundoAnimal = new Animal();
+	public static Animal terceiroAnimal = new Animal();
 	
 	public static void main(String[] args) {
 		System.out.print("======== ANIMAL ========");
-		
 		int cont = 0;
 		while(cont < 3) {
-			System.out.print("\nDIGITE A ESPÉCIE: ");
+			System.out.print("\nDIGITE O NOME DO ANIMAL: ");
+			String nome = in.next();
+			System.out.print("DIGITE A ESPÉCIE: ");
 			String especie = in.next();
 			System.out.print("DIGITE A QUANTIDADE DE PATAS: ");
 			int quantPatas = in.nextInt();
@@ -20,22 +21,25 @@ public class Main {
 			double peso = in.nextDouble();
 			
 			if(cont == 0) {
-				pato.especie = especie;
-				pato.quantPatas = quantPatas;
-				pato.peso = peso;
+				primeiroAnimal.nome = nome;
+				primeiroAnimal.especie = especie;
+				primeiroAnimal.quantPatas = quantPatas;
+				primeiroAnimal.peso = peso;
 			}else if(cont == 1) {
-				ganso.especie = especie;
-				ganso.quantPatas = quantPatas;
-				ganso.peso = peso;
+				segundoAnimal.nome = nome;
+				segundoAnimal.especie = especie;
+				segundoAnimal.quantPatas = quantPatas;
+				segundoAnimal.peso = peso;
 			}else if(cont == 2){
-				jumento.especie = especie;
-				jumento.quantPatas = quantPatas;
-				jumento.peso = peso;
+				terceiroAnimal.nome = nome;
+				terceiroAnimal.especie = especie;
+				terceiroAnimal.quantPatas = quantPatas;
+				terceiroAnimal.peso = peso;
 			}
 			cont++;
 		}
-		pato.imprimirValoresAnimal();
-		ganso.imprimirValoresAnimal();
-		jumento.imprimirValoresAnimal();
+		primeiroAnimal.imprimirValoresAnimal();
+		segundoAnimal.imprimirValoresAnimal();
+		terceiroAnimal.imprimirValoresAnimal();
 	}
 }
