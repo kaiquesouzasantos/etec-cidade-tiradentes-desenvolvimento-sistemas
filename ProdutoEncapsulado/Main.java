@@ -17,8 +17,8 @@ public class Main {
 
 		produto.calcularMargemLucro();
 		System.out.print("\nNOME DO PRODUTO: "+produto.getNomeProduto());
-		System.out.print("\nVALOR DE CUSTO: "+produto.getPrecoCusto());
-		System.out.print("\nVALOR DE VENDA: "+produto.getPrecoVenda());
+		System.out.print("\nVALOR DE CUSTO: R$"+produto.getPrecoCusto());
+		System.out.print("\nVALOR DE VENDA: R$"+produto.getPrecoVenda());
 		System.out.print("\nMARGEM DE LUCRO: R$"+produto.getMargemLucro());
 		System.out.print("\nPERCENTUAL DE MARGEM DE LUCRO: "+produto.getMargemLucroPorcentagem()+"%");
 	}
