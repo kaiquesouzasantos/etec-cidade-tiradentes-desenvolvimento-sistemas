@@ -16,10 +16,6 @@ public class Main {
 		}while(!produto.precoVendaValidacao);
 
 		produto.calcularMargemLucro();
-		System.out.print("\nNOME DO PRODUTO: "+produto.getNomeProduto());
-		System.out.print("\nVALOR DE CUSTO: R$"+produto.getPrecoCusto());
-		System.out.print("\nVALOR DE VENDA: R$"+produto.getPrecoVenda());
-		System.out.print("\nMARGEM DE LUCRO: R$"+produto.getMargemLucro());
-		System.out.print("\nPERCENTUAL DE MARGEM DE LUCRO: "+produto.getMargemLucroPorcentagem()+"%");
+		System.out.print("\nNOME DO PRODUTO: "+produto.getNomeProduto()+"\nVALOR DE CUSTO: R$"+produto.getPrecoCusto()+"\nVALOR DE VENDA: R$"+produto.getPrecoVenda()+"\nMARGEM DE LUCRO: R$"+produto.getMargemLucro()+"\nPERCENTUAL DE MARGEM DE LUCRO: "+produto.getMargemLucroPorcentagem()+"%");
 	}
 }
