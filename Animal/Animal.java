@@ -6,6 +6,6 @@ public class Animal {
 	public double peso;
 	
 	public void imprimirValoresAnimal() {
-		System.out.println("\nNOME: "+nome+"\nESPECIE: "+especie+"\nQUANTIDADE DE PATAS: "+quantPatas+"\nPESO: "+peso+"KG");
+		System.out.println("\nNOME: "+this.nome+"\nESPECIE: "+this.especie+"\nQUANTIDADE DE PATAS: "+this.quantPatas+"\nPESO: "+this.peso+"KG");
 	}
 }
