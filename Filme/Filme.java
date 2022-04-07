@@ -10,7 +10,5 @@ public class Filme {
     public void setDuracaoEmMinutos(int duracaoEmMinutos){this.duracaoEmMinutos = duracaoEmMinutos;}
 
     public String getTituloFilme(){return this.tituloFilme;}
-    public String exibirDuracaoEmHoras(){
-        return (this.duracaoEmMinutos/60)+"h "+(this.duracaoEmMinutos%60)+"min";
-    }
+    public String exibirDuracaoEmHoras(){return (this.duracaoEmMinutos/60)+"h "+(this.duracaoEmMinutos%60)+"min";}
 }
