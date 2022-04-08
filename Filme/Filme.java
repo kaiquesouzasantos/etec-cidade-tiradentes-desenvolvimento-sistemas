@@ -5,7 +5,7 @@ public class Filme {
     private int duracaoEmMinutos;
 
     public Filme(){}
-    
+
     // SET's
     public void setTituloFilme(String tituloFilme){this.tituloFilme = tituloFilme;}
     public void setDuracaoEmMinutos(int duracaoEmMinutos){this.duracaoEmMinutos = duracaoEmMinutos;}
