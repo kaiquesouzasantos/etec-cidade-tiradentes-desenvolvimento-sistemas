@@ -5,6 +5,7 @@ public class Main {
     public static final Scanner sc = new Scanner(System.in);
     public static Funcionario Pedro = new Funcionario();
     public static Funcionario Vagner = new Funcionario();
+
     public static void main(String[] args) {
         double salario, imposto;
         int i = 0;
@@ -16,23 +17,18 @@ public class Main {
             System.out.print("DIGITE A PORCENTAGEM DO IMPOSTO APLICADO: ");
             imposto = sc.nextDouble();
 
-            if(i == 0) {
-                Pedro.nome = "Pedro";
-                Pedro.salarioBruto = salario;
-                Pedro.imposto = imposto;
-
-                Pedro.calcularComissao();
-                Pedro.salarioLiquido();
-            }else{
-                Vagner.nome = "Vagner";
-                Vagner.salarioBruto = salario;
-                Vagner.imposto = imposto;
-
-                Vagner.calcularComissao();
-                Vagner.salarioLiquido();
-            }
+            if(i == 0) {atribuiObjeto(Pedro, "Pedro", salario, imposto);
+            }else{atribuiObjeto(Vagner, "Vagner", salario, imposto);}
             i++;
         }
+    }
 
+    public static void atribuiObjeto(Funcionario funcionario, String nome, double salario, double imposto){
+        funcionario.nome = nome;
+        funcionario.salarioBruto = salario;
+        funcionario.imposto = imposto;
+
+        funcionario.calcularComissao();
+        funcionario.salarioLiquido();
     }
 }
