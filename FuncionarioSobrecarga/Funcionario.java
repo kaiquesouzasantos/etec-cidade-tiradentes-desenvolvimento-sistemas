@@ -37,12 +37,13 @@ public class Funcionario {
 
         String verificacaoUltimosDigitos = cpf.substring(cpf.length() - 2);
         ultimosDigitos = digito_01+""+digito_02;
+
         if(verificacaoUltimosDigitos.equals(ultimosDigitos)){
             return this.cpf;
-        } return "CPF INVALIDO";
+        }return "CPF INVALIDO";
     }
 
-    // --> SALARIO
+    // ---> SALARIO
     public double getSalario() {return this.salario;}
 
     public String getSalario(String tipoMoeda) {
@@ -56,23 +57,19 @@ public class Funcionario {
     public void setSalario(double salario) {this.salario = salario;}
     public void setCpf(String cpf){this.cpf = cpf;}
 
-    // SET NOME
+    // ---> NOME
     public void setNome(String nome) {this.nome = nome;}
-
     public void setNome(String nome, boolean caixaAlta) {
         if(caixaAlta) {this.nome = nome.toUpperCase();
         }else {this.nome = nome.toLowerCase();}
     }
-
     public void setNome(String nome, String primeiraPalavra) {
         if(primeiraPalavra.equals("S")) {this.nome = nome.split(" ")[0];}
     }
-
     public void setNome(String nome, boolean caixaAlta, String primeiraPalavra) {
         if(caixaAlta) {this.nome = nome.toUpperCase();
         }else {this.nome = nome.toLowerCase();}
 
         if(primeiraPalavra.equals("S")) {this.nome = nome.split(" ")[0];}
     }
-
 }
