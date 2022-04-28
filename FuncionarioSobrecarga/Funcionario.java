@@ -45,7 +45,6 @@ public class Funcionario {
 
     // ---> SALARIO
     public double getSalario() {return this.salario;}
-
     public String getSalario(String tipoMoeda) {
         if(tipoMoeda.equals("US")) {
             return "US$ "+(this.salario / 4.96);
