@@ -38,17 +38,14 @@ public class Funcionario {
         String verificacaoUltimosDigitos = cpf.substring(cpf.length() - 2);
         ultimosDigitos = digito_01+""+digito_02;
 
-        if(verificacaoUltimosDigitos.equals(ultimosDigitos)){
-            return this.cpf;
-        }return "CPF INVALIDO";
+        if(verificacaoUltimosDigitos.equals(ultimosDigitos)){return this.cpf;}
+        return "CPF INVALIDO";
     }
 
     // ---> SALARIO
     public double getSalario() {return this.salario;}
     public String getSalario(String tipoMoeda) {
-        if(tipoMoeda.equals("US")) {
-            return "US$ "+(this.salario / 4.96);
-        }
+        if(tipoMoeda.equals("US")) {return "US$ "+(this.salario / 4.96);}
         return "R$ "+this.salario;
     }
 
