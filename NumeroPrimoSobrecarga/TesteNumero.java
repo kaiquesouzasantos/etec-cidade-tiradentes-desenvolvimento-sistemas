@@ -11,7 +11,7 @@ public class TesteNumero {
 
         do{
             numRecebidos.add(Integer.parseInt(JOptionPane.showInputDialog("Digite um numero: ")));
-            verificador = JOptionPane.showInputDialog("Deseja Continuar[s/n]? ");
+            verificador = JOptionPane.showInputDialog("Deseja Continuar[S/N]? ");
         }while(verificador.equalsIgnoreCase("s"));
 
         // numero.verificaPrimo(numRecebidos).forEach(System.out::println);
