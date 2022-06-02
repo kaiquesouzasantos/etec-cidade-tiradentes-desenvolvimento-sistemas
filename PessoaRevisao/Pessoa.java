@@ -25,8 +25,8 @@ public class Pessoa {
     // RETURN's
     public String retornaAtributos(){
         if(this.frase.equalsIgnoreCase("")){
-            return "NOME: "+this.nome+"\nALTURA: "+this.altura+"\nFRASE: FRASE DEFAULT";
-        } return "NOME: "+this.nome+"\nALTURA: "+this.altura+"\nFRASE: "+this.frase;
+            return "NOME: "+this.nome+"\nALTURA: "+this.altura+"m\nFRASE: FRASE DEFAULT";
+        } return "NOME: "+this.nome+"\nALTURA: "+this.altura+" m\nFRASE: "+this.frase;
     }
 
     public String retornaFrase(){return this.frase;}
