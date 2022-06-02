@@ -21,7 +21,6 @@ public class Pessoa {
     public String getFrase(){return this.frase;}
     public double getAltura(){return this.altura;}
 
-
     // RETURN's
     public String retornaAtributos(){
         if(this.frase.equalsIgnoreCase("")){
