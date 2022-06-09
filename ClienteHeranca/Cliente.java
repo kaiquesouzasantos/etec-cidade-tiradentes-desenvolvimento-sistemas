@@ -19,6 +19,7 @@ public class Cliente {
     public double getValorPedido() {return valorPedido;}
     public double getDesconto() {return desconto;}
 
+    // DESCONTO
     public void calculaDesconto(){
         this.desconto = valorPedido * 0.1;
     }
