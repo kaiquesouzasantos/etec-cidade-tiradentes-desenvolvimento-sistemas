@@ -1,7 +1,5 @@
 package ClienteHeranca.Entidades;
 
-import ClienteHeranca.Entidades.Cliente;
-
 public class ClientePremium extends Cliente {
     @Override
     public void calculaDesconto(){
