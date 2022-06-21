@@ -1,5 +1,4 @@
 package AnimalEncapsulado.Teste;
-
 import AnimalEncapsulado.Entidade.Animal;
 
 public class TesteAnimal {
