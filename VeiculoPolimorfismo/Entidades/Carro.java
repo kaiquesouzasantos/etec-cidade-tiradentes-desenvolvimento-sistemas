@@ -12,6 +12,6 @@ public class Carro extends Veiculo{
 
     @Override
     public String toString() {
-        return "Carro{"+getModelo()+", "+getCor()+", "+getTipoCombustivel()+", R$"+getValor()+", R$"+getIpva()+"}";
+        return "CARRO\nMODELO: "+getModelo()+"\nCOR: "+getCor()+"\nCOMBUSTIVEL: "+getTipoCombustivel()+"\nVALOR: R$"+getValor()+"\nIPVA: R$"+getIpva();
     }
 }

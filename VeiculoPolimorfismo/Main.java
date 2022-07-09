@@ -27,6 +27,6 @@ public class Main {
             continua = JOptionPane.showConfirmDialog(null, "DESEJA CONTINUAR CADASTRANDO VEICULOS?");
         }while (continua == JOptionPane.YES_NO_OPTION);
 
-        veiculos.forEach(System.out::println);
+        veiculos.forEach(v -> JOptionPane.showMessageDialog(null, v));
     }
 }
