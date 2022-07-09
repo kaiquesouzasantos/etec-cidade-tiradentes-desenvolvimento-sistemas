@@ -26,8 +26,8 @@ public class Elefante extends Animal{
     }
 
     public String toString() {
-        return "Elefante{\n"
+        return "--------------------------------------------------------------\n\n"
                 +getNome()+", "+getCor()+", "+getPeso()+"kg"+
-                corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n}";
+                corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n";
     }
 }

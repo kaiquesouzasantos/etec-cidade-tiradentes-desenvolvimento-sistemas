@@ -26,8 +26,8 @@ public class Cachorro extends Animal{
     }
 
     public String toString() {
-        return "Cachorro{\n"
+        return "--------------------------------------------------------------\n\n"
                 +getNome()+", "+getCor()+", "+getPeso()+"kg"+
-                corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n}";
+                corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n";
     }
 }
