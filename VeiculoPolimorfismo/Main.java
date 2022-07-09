@@ -27,14 +27,6 @@ public class Main {
             continua = JOptionPane.showConfirmDialog(null, "DESEJA CONTINUAR CADASTRANDO VEICULOS?");
         }while (continua == JOptionPane.YES_NO_OPTION);
 
-        executaParticularidades(veiculos);
-    }
-
-    public static void executaParticularidades(List<? extends Veiculo> veiculos){
-        for(Veiculo veiculo:veiculos){
-            System.out.println("--------------------------------------------------------------------------");
-            System.out.println(veiculo);
-            System.out.println("--------------------------------------------------------------------------");
-        }
+        veiculos.forEach(System.out::println);
     }
 }
