@@ -4,6 +4,12 @@ public class Funcionario {
     private String nome, cpf;
     private double salario;
 
+    public Funcionario(String nome, String cpf, double salario) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+    }
+
     // SET's
     public void setNome(String nome) {this.nome = nome;}
     public void setCpf(String cpf) {this.cpf = cpf;}
