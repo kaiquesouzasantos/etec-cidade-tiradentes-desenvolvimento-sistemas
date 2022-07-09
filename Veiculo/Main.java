@@ -1,8 +1,13 @@
 package Veiculo;
 
+import Veiculo.Entidades.Caminhao;
+import Veiculo.Entidades.Carro;
+import Veiculo.Entidades.Moto;
+
 public class Main{
     public static void main(String[] args){
         System.out.println("\n===============VEICULOS===============");
+        
         // MOTO
         Moto primeiraMoto = new Moto("XJ6", "YAMAHA", "Azul");
 
