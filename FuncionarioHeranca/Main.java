@@ -5,7 +5,6 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         int tipoFuncionario = Integer.parseInt(JOptionPane.showInputDialog("[1] - FUNCIONARIO\n[2] - GERENTE\n\nDIGITE O TIPO DE CONTA: "));
-
         if(tipoFuncionario != 1 && tipoFuncionario != 2){System.exit(0);}
 
         String nomeFuncionario = JOptionPane.showInputDialog("DIGITE SEU NOME: ");
