@@ -1,58 +1,35 @@
 package Conta;
-import java.util.Scanner;
+import Conta.Entidades.*;
+import javax.swing.*;
 
 public class Main {
-	public static final Scanner in = new Scanner(System.in);
-	public static Conta conta = new Conta();
-	public static ContaCorrente contaCorrente = new ContaCorrente();
-	
 	public static void main(String[] args) {
-		System.out.print("======== CONTA ========\n[C] - CONTA COMUM\n[CC] - CONTA CORRENTE\n\nDIGITE O TIPO DA CONTA: ");
-		String opcao = in.next();
-		
-		if(opcao.equalsIgnoreCase("C")) {
-			contaComum();
-		}else if(opcao.equalsIgnoreCase("CC")){
-			contaCorrente();
-		}
-	}
-	
-	public static void contaComum() {
-		conta.saldoConta = 1000;
-		
-		System.out.print("DIGITE O TITULAR DA CONTA: ");
-		conta.titularConta = in.next();
-		System.out.print("DIGITE O NÚMERO DA CONTA: ");
-		conta.numConta = in.nextInt();
-		System.out.print("DIGITE O NÚMERO DA AGÊNCIA: ");
-		conta.agenciaConta = in.nextInt();
-		
-		System.out.print("\n[S] - SACAR | [D] - DEPOSITAR\nDIGITE A OPERACAO DESEJADA: ");
-		String opcao = in.next();
-		
-		if(opcao.equalsIgnoreCase("S")) {
-			System.out.print("VALOR SAQUE: ");
-			double valorSaque = in.nextDouble();
-			conta.sacar(valorSaque);
-		}else if(opcao.equalsIgnoreCase("D")) {
-			System.out.print("VALOR DEPOSITO: ");
-			double deposito = in.nextDouble();
-			conta.depositar(deposito);
-		}
-		System.out.print("\nSALDO EM CONTA: R$"+conta.saldoConta);
-	}
-	
-	public static void contaCorrente() {
-		System.out.print("DIGITE O TITULAR DA CONTA: ");
-		contaCorrente.titularConta = in.next();
-		System.out.print("DIGITE O NÚMERO DA AGÊNCIA: ");
-		contaCorrente.agenciaConta = in.nextInt();
-		
-		contaCorrente.saldoConta = 1000;
-		contaCorrente.creditoConta = 200;
-		
-		contaCorrente.taxarConta();
-		contaCorrente.consultarConta();
-	}
+		int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CONTA COMUM  |  \n[2] - CONTA CORRENTE\n\nDIGITE O TIPO DA CONTA: "));
+		if(opcao != 1 && opcao != 2) System.exit(0);
 
+		String titular = JOptionPane.showInputDialog("DIGITE O TITULAR DA CONTA: ");
+		int numConta = Integer.parseInt(JOptionPane.showInputDialog("DIGITE O NUMERO DA CONTA: "));
+		int agencia = Integer.parseInt(JOptionPane.showInputDialog("DIGITE O NUMERO DA AGENCIA: "));
+
+		String operacao = JOptionPane.showInputDialog("[S] - SACAR  |  [D] - DEPOSITAR\nDIGITE A OPERACAO DESEJADA: ");
+		double valorTransacao = Double.parseDouble(JOptionPane.showInputDialog("DIGITE O VALOR DA TRANSACAO: R$"));
+
+		if(opcao == 1){
+			Conta contaComum = new Conta(1000, agencia, numConta, titular);
+
+			if(operacao.equalsIgnoreCase("S")) JOptionPane.showMessageDialog(null, contaComum.sacar(valorTransacao));
+			else if(operacao.equalsIgnoreCase("D")) contaComum.depositar(valorTransacao);
+
+			JOptionPane.showMessageDialog(null, contaComum);
+
+		}else{
+			ContaCorrente contaCorrente = new ContaCorrente(1000, 2000, agencia, numConta, titular);
+
+			if(operacao.equalsIgnoreCase("S")) JOptionPane.showMessageDialog(null, contaCorrente.sacar(valorTransacao));
+			else if(operacao.equalsIgnoreCase("D")) contaCorrente.depositar(valorTransacao);
+			contaCorrente.taxarConta();
+
+			JOptionPane.showMessageDialog(null, contaCorrente);
+		}
+	}
 }
