@@ -10,24 +10,21 @@ public class Jaguar extends Animal{
         return "Os jaguares atingem a velocidade de 70 km/h";
     }
 
-    @Override
     public String come() {
         return "Os jaguares se alimentam de carne de outros animais";
     }
 
-    @Override
     public String dorme() {
         return "Os jaguares dormem 8 horas por dia";
     }
 
-    @Override
     public String fala() {
-        return "O som emitido pelos jaguares é: GGRRRRRRRRRA";
+        return "O som emitido pelos jaguares e: GGRRRRRRRRRA";
     }
 
     public String toString() {
-        return "--------------------------------------------------------------\n\n"
-                +getNome()+", "+getCor()+", "+getPeso()+"kg"+
+        return "TIPO: JAGUAR\n"
+                +getNome()+" | "+getCor()+" | "+getPeso()+"kg\n"+
                 corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n";
     }
 }
