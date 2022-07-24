@@ -1,44 +1,28 @@
 package Veiculo;
-
-import Veiculo.Entidades.Caminhao;
-import Veiculo.Entidades.Carro;
-import Veiculo.Entidades.Moto;
+import Veiculo.Entidades.*;
+import javax.swing.*;
 
 public class Main{
     public static void main(String[] args){
-        System.out.println("\n===============VEICULOS===============");
-        
-        // MOTO
-        Moto primeiraMoto = new Moto("XJ6", "YAMAHA", "Azul");
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CARRO  |  [2] - MOTOCICLETA  |  [3] - CAMINHAO\n\nDIGITE O QUE DESEJA CADASTRAR: "));
 
-        Moto segundaMoto = new Moto();
-        segundaMoto.modelo = "R1200";
-        segundaMoto.marca = "BMW";
-        segundaMoto.cor = "Preto";
+        if(opcao != 1 && opcao != 2 && opcao != 3) System.exit(0);
 
-        System.out.println("\n-----MOTO-----\nModelo: "+primeiraMoto.modelo+"\nMarca: "+primeiraMoto.marca+"\nCor: "+primeiraMoto.cor);
-        System.out.println("\n-----MOTO-----\nModelo: "+segundaMoto.modelo+"\nMarca: "+segundaMoto.marca+"\nCor: "+segundaMoto.cor);
+        String modelo = JOptionPane.showInputDialog("DIGITE O MODELO: ");
+        String marca = JOptionPane.showInputDialog("DIGITE A MARCA: ");
 
-        // CARRO
-        Carro primeiroCarro = new Carro("Triton L200", "Mitsubishi", "Black Piano");
+        if(opcao == 1 || opcao == 2){
+            String cor = JOptionPane.showInputDialog("DIGITE A COR: ");
 
-        Carro segundoCarro = new Carro();
-        segundoCarro.setModelo("F-150 Raptor");
-        segundoCarro.setMarca("Ford");
-        segundoCarro.setCor("Branco ");
+            if(opcao == 1) apresentaVeiculo(new Carro(modelo, marca, cor));
+            else apresentaVeiculo(new Moto(modelo, marca, cor));
+        }else{
+            int potencia = Integer.parseInt(JOptionPane.showInputDialog("DIGITE A POTENCIA: "));
+            apresentaVeiculo(new Caminhao(modelo, marca, potencia));
+        }
+    }
 
-        System.out.println("\n-----CARRO-----\nModelo: "+primeiroCarro.getModelo()+"\nMarca: "+primeiroCarro.getMarca()+"\nCor: "+primeiroCarro.getCor());
-        System.out.println("\n-----CARRO-----\nModelo: "+segundoCarro.getModelo()+"\nMarca: "+segundoCarro.getMarca()+"\nCor: "+segundoCarro.getCor());
-
-        // CAMINHAO
-        Caminhao primeiroCaminhao = new Caminhao("770s", "Scania", 770);
-
-        Caminhao segundoCaminhao = new Caminhao();
-        segundoCaminhao.setModelo("Actros 2651 6x4");
-        segundoCaminhao.setMarca("Mercedes-Benz");
-        segundoCaminhao.setPotenciaCavalos(510);
-
-        System.out.println("\n-----CAMINHAO-----\nModelo: "+primeiroCaminhao.getModelo()+"\nMarca: "+primeiroCaminhao.getMarca()+"\nPotencia: "+primeiroCaminhao.getPotenciaCavalos()+"cv");
-        System.out.println("\n-----CAMINHAO-----\nModelo: "+segundoCaminhao.getModelo()+"\nMarca: "+segundoCaminhao.getMarca()+"\nPotencia: "+segundoCaminhao.getPotenciaCavalos()+"cv");
+    public static void apresentaVeiculo(Object veiculo){
+        JOptionPane.showMessageDialog(null, veiculo);
     }
 }

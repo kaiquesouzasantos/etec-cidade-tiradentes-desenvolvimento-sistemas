@@ -20,4 +20,9 @@ public class Caminhao{
     public String getModelo(){return modelo;}
     public String getMarca(){return marca;}
     public int getPotenciaCavalos(){return potenciaCavalos;}
+
+    @Override
+    public String toString() {
+        return "TIPO: CAMINHAO\nMODELO: "+modelo+"\nMARCA: "+marca+"\nPOTENCIA: "+potenciaCavalos+"cv";
+    }
 }

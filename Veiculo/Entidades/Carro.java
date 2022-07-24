@@ -19,4 +19,9 @@ public class Carro{
     public String getModelo(){return modelo;}
     public String getMarca(){return marca;}
     public String getCor(){return cor;}
+
+    @Override
+    public String toString() {
+        return "TIPO: CARRO\nMODELO: "+modelo+"\nMARCA: "+marca+"\nCOR: "+cor;
+    }
 }

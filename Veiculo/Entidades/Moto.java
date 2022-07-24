@@ -9,4 +9,9 @@ public class Moto{
         this.marca = marca;
         this.cor = cor;
     }
+
+    @Override
+    public String toString() {
+        return "TIPO: MOTOCICLETA\nMODELO: "+modelo+"\nMARCA: "+marca+"\nCOR: "+cor;
+    }
 }
