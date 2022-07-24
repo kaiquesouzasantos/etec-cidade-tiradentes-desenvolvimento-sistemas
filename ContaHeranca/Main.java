@@ -1,8 +1,7 @@
 package ContaHeranca;
 import ContaHeranca.Entidades.*;
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -16,22 +15,17 @@ public class Main {
         String operacao = JOptionPane.showInputDialog("[SC] - SAQUE\n[DP] - DEPOSITO\n\nDIGITE A OPERAÇÃO: ");
         double valor = Double.parseDouble(JOptionPane.showInputDialog("VALOR: R$"));
 
-        List<Conta> conta = new ArrayList<>();
-        if(opcao == 1) conta.add(new ContaPoupanca(numAgencia, numConta, titular));
-        else conta.add(new ContaCorrente(numAgencia, numConta, titular));
-
-        executaConta(conta, operacao, valor);
+        if(opcao == 1) executaConta(new ContaPoupanca(numAgencia, numConta, titular), operacao, valor);
+        else executaConta(new ContaCorrente(numAgencia, numConta, titular), operacao, valor);
     }
 
-    public static void executaConta(List<? extends Conta> contas, String operacao, double valor){
-        contas.forEach(conta -> {
-            conta.setSaldoConta(200);
-            if (conta instanceof ContaCorrente) ((ContaCorrente) conta).setLimite(1000);
+    public static void executaConta(Conta conta, String operacao, double valor){
+        conta.setSaldoConta(200);
+        if (conta instanceof ContaCorrente) ((ContaCorrente) conta).setLimite(1000);
 
-            if(operacao.equalsIgnoreCase("SC")) JOptionPane.showMessageDialog(null, conta.sacar(valor));
-            else if (operacao.equalsIgnoreCase("DP")) JOptionPane.showMessageDialog(null, conta.depositar(valor));
+        if(operacao.equalsIgnoreCase("SC")) JOptionPane.showMessageDialog(null, conta.sacar(valor));
+        else if (operacao.equalsIgnoreCase("DP")) JOptionPane.showMessageDialog(null, conta.depositar(valor));
 
-            JOptionPane.showMessageDialog(null, conta.informacoes());
-        });
+        JOptionPane.showMessageDialog(null, conta.informacoes());
     }
 }
