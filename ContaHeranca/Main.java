@@ -28,17 +28,8 @@ public class Main {
             conta.setSaldoConta(200);
             if (conta instanceof ContaCorrente) ((ContaCorrente) conta).setLimite(1000);
 
-            if(operacao.equalsIgnoreCase("SC")){
-                if(conta.sacar(valor)){
-                    conta.sacar(valor);
-                    JOptionPane.showMessageDialog(null, "-- SAQUE REALIZADO COM SUCESSO --");
-                }else{
-                    JOptionPane.showMessageDialog(null, "-- VALOR INDISPONIVEL --");
-                }
-            } else if (operacao.equalsIgnoreCase("DP")) {
-                conta.depositar(valor);
-                JOptionPane.showMessageDialog(null, "-- DEPOSITO REALIZADO COM SUCESSO --");
-            }
+            if(operacao.equalsIgnoreCase("SC")) JOptionPane.showMessageDialog(null, conta.sacar(valor));
+            else if (operacao.equalsIgnoreCase("DP")) JOptionPane.showMessageDialog(null, conta.depositar(valor));
 
             JOptionPane.showMessageDialog(null, conta.informacoes());
         });

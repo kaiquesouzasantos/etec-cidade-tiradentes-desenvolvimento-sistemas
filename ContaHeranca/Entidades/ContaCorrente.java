@@ -12,17 +12,17 @@ public class ContaCorrente extends Conta{
     public void setLimite(double limite) {this.limite = limite;}
 
     @Override
-    public boolean sacar(double saqueValor) {
+    public String sacar(double saqueValor) {
         if(saqueValor <= getSaldoConta()) {
             setSaldoConta(getSaldoConta() - saqueValor);
-            return true;
+            return "-- SAQUE REALIZADO COM SUCESSO --";
         }else if(saqueValor <= getSaldoConta() + limite){
             saqueValor = getSaldoConta() - saqueValor;
             setSaldoConta(0);
             setLimite(getLimite() - saqueValor);
-            return true;
+            return "-- SAQUE REALIZADO COM SUCESSO --";
         }
-        return false;
+        return "-- VALOR INDISPONIVEL --";
     }
 
     @Override

@@ -27,11 +27,7 @@ public class TesteContaCorrente {
         conta.depositar(depositoValor);
         conta.sacar(saqueValor);
 
-        if(!conta.sacar(saqueValor)){
-            System.out.println("-- VALOR INDISPONIVEL! --");
-        }else{
-            System.out.println("-- SAQUE REALIZADO COM SUCESSO! --");
-        }
+        System.out.println(conta.sacar(saqueValor));
 
         System.out.println(conta.informacoes());
     }

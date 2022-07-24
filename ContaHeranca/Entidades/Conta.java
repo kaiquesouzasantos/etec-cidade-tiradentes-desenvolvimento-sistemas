@@ -23,16 +23,17 @@ public abstract class Conta {
     public void setAgenciaConta(int agenciaConta) {this.agenciaConta = agenciaConta;}
     public void setNumConta(int numConta) {this.numConta = numConta;}
 
-    public void depositar(double depositoValor) {
+    public String depositar(double depositoValor) {
         this.saldoConta += depositoValor;
+        return "DEPOSITO REALIZADO COM SUCESSO!";
     }
 
-    public boolean sacar(double saqueValor) {
+    public String sacar(double saqueValor) {
         if(saqueValor <= this.saldoConta) {
             this.saldoConta -= saqueValor;
-            return true;
+            return "-- SAQUE REALIZADO COM SUCESSO --";
         }
-        return false;
+        return "-- VALOR INDISPONIVEL --";
     }
 
     public String informacoes(){

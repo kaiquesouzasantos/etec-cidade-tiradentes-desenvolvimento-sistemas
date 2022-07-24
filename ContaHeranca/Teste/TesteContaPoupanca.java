@@ -26,11 +26,7 @@ public class TesteContaPoupanca {
         conta.depositar(depositoValor);
         conta.sacar(saqueValor);
 
-        if(conta.sacar(saqueValor)){
-            System.out.println("-- SALDO INSUFICIENTE! --");
-        }else{
-            System.out.println("-- SAQUE REALIZADO COM SUCESSO! --");
-        }
+        System.out.println(conta.sacar(saqueValor));
 
         conta.calculaRendimento();
         System.out.println(conta.informacoes());
