@@ -68,4 +68,12 @@ public class Funcionario {
 
         if(primeiraPalavra.equals("S")) {this.nome = nome.split(" ")[0];}
     }
+
+    @Override
+    public String toString() {
+        return "Nome: "+nome+
+                "\n"+"CPF: "+cpf+
+                "\n"+"Salario BR: R$"+salario+
+                "\n"+"Salario USA: U$"+getSalario("US");
+    }
 }
