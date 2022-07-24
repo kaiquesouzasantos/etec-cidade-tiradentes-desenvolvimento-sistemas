@@ -1,10 +1,13 @@
 package ContaHeranca;
 import ContaHeranca.Entidades.*;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CONTA COMUM\n[2] - CONTA POUPANCA\n[3] - CONTA CORRENTE\n\nDIGITE O TIPO DE CONTA: "));
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CONTA POUPANCA\n[2] - CONTA CORRENTE\n\nDIGITE O TIPO DE CONTA: "));
+        if(opcao != 1 && opcao != 2) System.exit(0);
 
         String titular = JOptionPane.showInputDialog("DIGITE O TITULAR: ");
         int numAgencia = Integer.parseInt(JOptionPane.showInputDialog("NUMERO DA AGENCIA: "));
@@ -13,69 +16,31 @@ public class Main {
         String operacao = JOptionPane.showInputDialog("[SC] - SAQUE\n[DP] - DEPOSITO\n\nDIGITE A OPERAÇÃO: ");
         double valor = Double.parseDouble(JOptionPane.showInputDialog("VALOR: R$"));
 
-        if(opcao == 1){
-            executaContaComum(new Conta(numAgencia, numConta, titular), operacao, valor, 150);
-        } else if (opcao == 2) {
-            executaContaPoupanca(new ContaPoupanca(numAgencia, numConta, titular), operacao, valor, 150);
-        }else if (opcao == 3){
-            executaContaCorrente(new ContaCorrente(numAgencia, numConta, titular), operacao, valor, 1000, 100);
-        }else {
-            System.exit(0);
-        }
+        List<Conta> conta = new ArrayList<>();
+        if(opcao == 1) conta.add(new ContaPoupanca(numAgencia, numConta, titular));
+        else conta.add(new ContaCorrente(numAgencia, numConta, titular));
+
+        executaConta(conta, operacao, valor);
     }
 
-    public static void executaContaPoupanca(ContaPoupanca conta, String operacao, double valor, double saldo){
-        conta.setSaldoConta(saldo);
+    public static void executaConta(List<? extends Conta> contas, String operacao, double valor){
+        contas.forEach(conta -> {
+            conta.setSaldoConta(200);
+            if (conta instanceof ContaCorrente) ((ContaCorrente) conta).setLimite(1000);
 
-        if(operacao.equalsIgnoreCase("SC")){
-            if(conta.sacar(valor)){
-                conta.sacar(valor);
-                JOptionPane.showMessageDialog(null, "-- SAQUE REALIZADO COM SUCESSO --");
-            }else{
-                JOptionPane.showMessageDialog(null, "-- VALOR INDISPONIVEL --");
+            if(operacao.equalsIgnoreCase("SC")){
+                if(conta.sacar(valor)){
+                    conta.sacar(valor);
+                    JOptionPane.showMessageDialog(null, "-- SAQUE REALIZADO COM SUCESSO --");
+                }else{
+                    JOptionPane.showMessageDialog(null, "-- VALOR INDISPONIVEL --");
+                }
+            } else if (operacao.equalsIgnoreCase("DP")) {
+                conta.depositar(valor);
+                JOptionPane.showMessageDialog(null, "-- DEPOSITO REALIZADO COM SUCESSO --");
             }
-        } else if (operacao.equalsIgnoreCase("DP")) {
-            conta.depositar(valor);
-            JOptionPane.showMessageDialog(null, "-- DEPOSITO REALIZADO COM SUCESSO --");
-        }
 
-        JOptionPane.showMessageDialog(null, conta.informacoes());
-    }
-
-    public static void executaContaComum(Conta conta, String operacao, double valor, double saldo){
-        conta.setSaldoConta(saldo);
-
-        if(operacao.equalsIgnoreCase("SC")){
-            if(conta.sacar(valor)){
-                conta.sacar(valor);
-                JOptionPane.showMessageDialog(null, "-- SAQUE REALIZADO COM SUCESSO --");
-            }else{
-                JOptionPane.showMessageDialog(null, "-- VALOR INDISPONIVEL --");
-            }
-        } else if (operacao.equalsIgnoreCase("DP")) {
-            conta.depositar(valor);
-            JOptionPane.showMessageDialog(null, "-- DEPOSITO REALIZADO COM SUCESSO --");
-        }
-
-        JOptionPane.showMessageDialog(null, conta.informacoes());
-    }
-
-    public static void executaContaCorrente(ContaCorrente conta, String operacao, double valor, double limite, double saldo){
-        conta.setSaldoConta(saldo);
-        conta.setLimite(limite);
-
-        if(operacao.equalsIgnoreCase("SC")){
-            if(conta.sacar(valor)){
-                conta.sacar(valor);
-                JOptionPane.showMessageDialog(null, "-- SAQUE REALIZADO COM SUCESSO --\n");
-            }else{
-                JOptionPane.showMessageDialog(null, "-- VALOR INDISPONIVEL --\n");
-            }
-        } else if (operacao.equalsIgnoreCase("DP")) {
-            conta.depositar(valor);
-            JOptionPane.showMessageDialog(null, "-- DEPOSITO REALIZADO COM SUCESSO --\n");
-        }
-
-        JOptionPane.showMessageDialog(null, conta.informacoes());
+            JOptionPane.showMessageDialog(null, conta.informacoes());
+        });
     }
 }

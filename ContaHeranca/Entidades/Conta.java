@@ -1,6 +1,6 @@
 package ContaHeranca.Entidades;
 
-public class Conta {
+public abstract class Conta {
     private double saldoConta;
     private int agenciaConta, numConta;
     private String titularConta;
