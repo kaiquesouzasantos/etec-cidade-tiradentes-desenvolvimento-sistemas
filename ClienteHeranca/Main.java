@@ -4,22 +4,19 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        try{
-            int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CLIENTE\n[2] - CLIENTE PREMIUM\n\nDIGITE O TIPO DE CLIENTE: "));
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CLIENTE\n[2] - CLIENTE PREMIUM\n\nDIGITE O TIPO DE CLIENTE: "));
+        if(opcao != 1 && opcao != 2) System.exit(0);
 
-            if(opcao == 1){cliente(new Cliente());
-            }else if(opcao == 2) {cliente(new ClientePremium());
-            }else{System.exit(0);}
-        }catch (Exception e){System.exit(0);}
-    }
+        String nome = JOptionPane.showInputDialog("DIGITE SEU NOME: ");
+        String endereco = JOptionPane.showInputDialog("DIGITE SEU ENDEREÇO: ");
+        int idade = Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA IDADE: "));
+        double valorPedido = Double.parseDouble(JOptionPane.showInputDialog("VALOR DOS PEDIDOS: R$"));
 
-    public static void cliente(Cliente cliente){
-        cliente.setNome(JOptionPane.showInputDialog("DIGITE SEU NOME: "));
-        cliente.setEndereco(JOptionPane.showInputDialog("DIGITE SEU ENDEREÇO: "));
-        cliente.setIdade(Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA IDADE: ")));
-        cliente.setValorPedido(Double.parseDouble(JOptionPane.showInputDialog("VALOR DOS PEDIDOS: R$")));
-        cliente.calculaDesconto();
-
-        JOptionPane.showMessageDialog(null, "DESCONTO: R$"+cliente.getDesconto());
+        if(opcao == 1)
+            JOptionPane.showMessageDialog(
+                    null, "DESCONTO: R$"+new Cliente(nome, endereco, idade, valorPedido).getDesconto());
+        else
+            JOptionPane.showMessageDialog(
+                null, "DESCONTO: R$"+new ClientePremium(nome, endereco, idade, valorPedido).getDesconto());
     }
 }

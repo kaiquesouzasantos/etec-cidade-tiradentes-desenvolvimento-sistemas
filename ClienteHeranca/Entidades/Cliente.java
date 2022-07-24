@@ -5,6 +5,14 @@ public class Cliente {
     private int idade;
     private double valorPedido, desconto;
 
+    public Cliente(String nome, String endereco, int idade, double valorPedido) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.idade = idade;
+        this.valorPedido = valorPedido;
+        this.desconto = calculaDesconto();
+    }
+
     // SET'S
     public void setNome(String nome) {this.nome = nome;}
     public void setEndereco(String endereco) {this.endereco = endereco;}
@@ -20,7 +28,7 @@ public class Cliente {
     public double getDesconto() {return desconto;}
 
     // DESCONTO
-    public void calculaDesconto(){
-        this.desconto = valorPedido * 0.1;
+    public double calculaDesconto(){
+        return valorPedido * 0.1;
     }
 }
