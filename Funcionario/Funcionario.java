@@ -4,12 +4,21 @@ public class Funcionario {
     public String nome;
     public double salarioBruto, valorComissao, imposto;
 
-    public String calcularComissao(){
-        valorComissao = (salarioBruto * 0.12);
-        return  "VALOR DA COMISSAO: R$"+valorComissao;
+    public Funcionario(String nome) {
+        this.nome = nome;
     }
 
-    public String salarioLiquido(){
-        return nome+", \nSEU SALARIO LIQUIDO E DE R$"+((salarioBruto + valorComissao) - (salarioBruto * (imposto/100)))+"\n";
+    public double calcularComissao(){
+        valorComissao = (salarioBruto * 0.12);
+        return  valorComissao;
+    }
+
+    public double salarioLiquido(){
+        return ((salarioBruto + valorComissao) - (salarioBruto * (imposto/100)));
+    }
+
+    @Override
+    public String toString() {
+        return "NOME: "+nome+"\nSALARIO LIQUIDO: R$"+salarioLiquido()+"\nCOMISSAO: R$"+calcularComissao();
     }
 }
