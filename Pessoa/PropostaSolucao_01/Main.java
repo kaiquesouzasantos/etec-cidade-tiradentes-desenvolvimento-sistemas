@@ -13,9 +13,6 @@ public class Main {
         System.out.print("DIGITE SUA DATA DE NASCIMENTO: ");
         pessoa.setAnoNascimento(in.nextInt());
 
-        System.out.println("\nNOME: "+pessoa.getNome());
-        System.out.println("ALTURA: "+pessoa.getAltura());
-        System.out.println("DATA DE NASCIMENTO: "+pessoa.getAnoNascimento());
-        System.out.println("IDADE: "+pessoa.calculoIdade()+" anos");
+        System.out.println(pessoa);
     }
 }

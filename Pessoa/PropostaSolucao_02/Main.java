@@ -9,6 +9,6 @@ public class Main {
         pessoa.setAltura(Double.parseDouble(JOptionPane.showInputDialog("DIGITE SUA ALTURA: ")));
         pessoa.setAnoNascimento(Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA DATA DE NASCIMENTO: ")));
 
-        JOptionPane.showMessageDialog(null, "NOME: "+pessoa.getNome() +"\nALTURA: "+pessoa.getAltura() +"\nDATA DE NASCIMENTO: "+pessoa.getAnoNascimento() +"\nIDADE: "+pessoa.calculoIdade()+" anos");
+        JOptionPane.showMessageDialog(null, pessoa);
     }
 }

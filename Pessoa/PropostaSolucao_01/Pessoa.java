@@ -24,4 +24,9 @@ public class Pessoa{
     public String getNome(){return this.nome;}
     public double getAltura(){return this.altura;}
     public int getAnoNascimento(){return this.anoNascimento;}
+
+    @Override
+    public String toString() {
+        return "NOME: "+nome+"\nALTURA: "+altura+"m\nDATA DE NASCIMENTO: "+anoNascimento+"\nIDADE: "+calculoIdade()+" anos";
+    }
 }
