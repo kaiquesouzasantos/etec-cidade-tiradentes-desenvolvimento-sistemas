@@ -21,13 +21,10 @@ public class Main {
             }else{
                 double largura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A LARGURA: "));
                 double altura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A ALTURA: "));
-
-                if(opcao == 2)
-                    figuras.add(new Retangulo(altura, largura));
-                else if(opcao == 3)
-                    figuras.add(new Losangulo(altura, largura));
-                else
-                    figuras.add(new Triangulo(altura, largura));
+                
+                if(opcao == 2) figuras.add(new Retangulo(altura, largura));
+                else if(opcao == 3) figuras.add(new Losangulo(altura, largura));
+                else figuras.add(new Triangulo(altura, largura));
             }
 
             continua = JOptionPane.showInputDialog("DESEJA CONTINUAR? [S/N]");
