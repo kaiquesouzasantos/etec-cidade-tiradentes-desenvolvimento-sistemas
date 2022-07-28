@@ -17,13 +17,10 @@ public class Main {
         } else{
             double largura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A LARGURA: "));
             double altura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A ALTURA: "));
-
-            if(opcao == 2)
-                aprensentaFiguraGeometrica(new Retangulo(altura, largura));
-            else if(opcao == 3)
-                aprensentaFiguraGeometrica(new Losangulo(altura, largura));
-            else
-                aprensentaFiguraGeometrica(new Triangulo(altura, largura));
+            
+            if(opcao == 2) aprensentaFiguraGeometrica(new Retangulo(altura, largura));
+            else if(opcao == 3) aprensentaFiguraGeometrica(new Losangulo(altura, largura));
+            else aprensentaFiguraGeometrica(new Triangulo(altura, largura));
         }
     }
 
