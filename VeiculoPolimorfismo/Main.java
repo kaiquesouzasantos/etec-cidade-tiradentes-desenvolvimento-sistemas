@@ -18,11 +18,8 @@ public class Main {
             String combustivel = JOptionPane.showInputDialog("DIGITE O TIPO DE COMBUSTIVEL: ");
             double valor = Double.parseDouble(JOptionPane.showInputDialog("DIGITE O VALOR: R$"));
 
-            if(opcao == 1){
-                veiculos.add(new Carro(modelo,cor,combustivel,valor));
-            }else {
-                veiculos.add(new Motocicleta(modelo,cor,combustivel,valor));
-            }
+            if(opcao == 1) veiculos.add(new Carro(modelo,cor,combustivel,valor));
+            else veiculos.add(new Motocicleta(modelo,cor,combustivel,valor));
 
             continua = JOptionPane.showConfirmDialog(null, "DESEJA CONTINUAR CADASTRANDO VEICULOS?");
         }while (continua == JOptionPane.YES_NO_OPTION);
