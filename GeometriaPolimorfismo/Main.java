@@ -10,13 +10,13 @@ public class Main {
 
         if(opcao == 1){
             aprensentaFiguraGeometrica(new Circulo(
-                    Integer.parseInt(JOptionPane.showInputDialog("DIGITE O RAIO: "))));
+                    Double.parseDouble(JOptionPane.showInputDialog("DIGITE O RAIO: "))));
         } else if(opcao == 5) {
             aprensentaFiguraGeometrica(new Quadrado(
-                    Integer.parseInt(JOptionPane.showInputDialog("DIGITE O TAMANHO DO LADO: "))));
+                    Double.parseDouble(JOptionPane.showInputDialog("DIGITE O TAMANHO DO LADO: "))));
         } else{
-            int largura = Integer.parseInt(JOptionPane.showInputDialog("DIGITE A LARGURA: "));
-            int altura = Integer.parseInt(JOptionPane.showInputDialog("DIGITE A ALTURA: "));
+            double largura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A LARGURA: "));
+            double altura = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A ALTURA: "));
 
             if(opcao == 2)
                 aprensentaFiguraGeometrica(new Retangulo(altura, largura));
