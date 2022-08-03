@@ -11,7 +11,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class InterfaceCadastroAmigo extends JFrame {
+public class CadastroAmigo extends JFrame {
     public JPanel contentPane;
     public List<String> listaAmigo = new ArrayList<>();
     public JTextField nome = new JTextField();
