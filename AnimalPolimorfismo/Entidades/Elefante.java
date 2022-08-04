@@ -6,25 +6,25 @@ public class Elefante extends Animal{
     }
 
     @Override
-    public String Correr() {
+    public String correr() {
         return "Os elefantes atingem a velocidade de 5 km por hora";
     }
 
-    public String Alimentar() {
+    public String alimentar() {
         return "Os elefantes se alimentam de frutas e folhas";
     }
 
-    public String Dormir() {
+    public String dormir() {
         return "Os elefantes dormem 8 horas por dia";
     }
 
-    public String EmitirSom() {
+    public String emitirSom() {
         return "O som emitido pelos elefantes e: PRUUUUUUUUU";
     }
 
     public String toString() {
         return "TIPO: ELEFANTE\n"
                 +getNome()+" | "+getCor()+" | "+getPeso()+"kg\n"+
-                Correr()+"\n"+Alimentar()+"\n"+EmitirSom()+"\n"+Dormir()+"\n";
+                correr()+"\n"+alimentar()+"\n"+emitirSom()+"\n"+dormir()+"\n";
     }
 }
