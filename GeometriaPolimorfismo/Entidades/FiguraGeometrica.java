@@ -10,6 +10,6 @@ public abstract class FiguraGeometrica {
 
     @Override
     public String toString() {
-        return "FIGURA GEOMETRICA: "+getNome()+" | AREA: "+calculoArea();
+        return "FIGURA GEOMETRICA: "+this.nome+" | AREA: "+calculoArea();
     }
 }
