@@ -27,8 +27,6 @@ public class TesteContaPoupanca {
         conta.sacar(saqueValor);
 
         System.out.println(conta.sacar(saqueValor));
-
-        conta.calculaRendimento();
-        System.out.println(conta.informacoes());
+        System.out.println(conta);
     }
 }

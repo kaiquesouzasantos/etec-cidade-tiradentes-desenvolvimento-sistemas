@@ -29,6 +29,6 @@ public class TesteContaCorrente {
 
         System.out.println(conta.sacar(saqueValor));
 
-        System.out.println(conta.informacoes());
+        System.out.println(conta);
     }
 }

@@ -7,12 +7,24 @@ public class ContaPoupanca extends Conta {
         super(agenciaConta, numConta, titularConta);
     }
 
-    public void calculaRendimento(){
+    private void calculaRendimento(){
         setSaldoConta(getSaldoConta() + (getSaldoConta()*(rendimento/100)));
     }
 
     @Override
-    public String informacoes(){
-        return "TITULAR: "+getTitularConta()+"\nAGENCIA: "+getAgenciaConta()+"\nCONTA: "+getNumConta()+"\nSALDO: R$"+getSaldoConta()+"\nRENDIMENTO APLICADO: "+rendimento+"%";
+    public String depositar(double depositoValor) {
+        setSaldoConta(getSaldoConta() + depositoValor);
+        calculaRendimento();
+        return "-------------------------------------\n" +
+                "DEPOSITO CONCLUIDO COM SUCESSO" +
+                "\n-------------------------------------";
+    }
+
+    public String toString() {
+        return  "TITULAR: "+getTitularConta()+
+                "\nAGENCIA: "+getAgenciaConta()+
+                "\nCONTA: "+getNumConta()+
+                "\nSALDO: R$"+getSaldoConta()+
+                "\nRENDIMENTO APLICADO: "+rendimento+"%";
     }
 }

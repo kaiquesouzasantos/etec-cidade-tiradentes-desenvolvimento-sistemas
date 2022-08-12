@@ -15,18 +15,27 @@ public class ContaCorrente extends Conta{
     public String sacar(double saqueValor) {
         if(saqueValor <= getSaldoConta()) {
             setSaldoConta(getSaldoConta() - saqueValor);
-            return "-- SAQUE REALIZADO COM SUCESSO --";
+            return "-------------------------------------\n" +
+                    "SAQUE CONCLUIDO COM SUCESSO\n" +
+                    "-------------------------------------";
         }else if(saqueValor <= getSaldoConta() + limite){
             saqueValor = getSaldoConta() - saqueValor;
             setSaldoConta(0);
             setLimite(getLimite() - saqueValor);
-            return "-- SAQUE REALIZADO COM SUCESSO --";
+            return "-------------------------------------\n" +
+                    "SAQUE CONCLUIDO COM SUCESSO" +
+                    "\n-------------------------------------";
         }
-        return "-- VALOR INDISPONIVEL --";
+        return "-------------------------------------\n" +
+                "VALOR INDISPONIVEL" +
+                "\n-------------------------------------";
     }
 
-    @Override
-    public String informacoes(){
-        return "TITULAR: "+getTitularConta()+"\nAGENCIA: "+getAgenciaConta()+"\nCONTA: "+getNumConta()+"\nSALDO: R$"+getSaldoConta()+"\nLIMITE: R$"+limite;
+    public String toString() {
+        return  "TITULAR: "+getTitularConta()+
+                "\nAGENCIA: "+getAgenciaConta()+
+                "\nCONTA: "+getNumConta()+
+                "\nSALDO: R$"+getSaldoConta()+
+                "\nLIMITE: R$"+limite;
     }
 }
