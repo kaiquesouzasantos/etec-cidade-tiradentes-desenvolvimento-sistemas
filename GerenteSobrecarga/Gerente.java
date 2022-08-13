@@ -28,7 +28,7 @@ public class Gerente extends JFrame{
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel titulo = new JLabel("Cadastrar Funcionario");
+        JLabel titulo = new JLabel("Cadastrar Gerente");
         titulo.setHorizontalAlignment(SwingConstants.CENTER);
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         titulo.setForeground(Color.WHITE);
