@@ -25,7 +25,11 @@ public class Animal {
 	public int getQuantPatas() {return this.quantPatas;}
 	public double getPeso() {return this.peso;}
 
-	public void imprimirValoresAnimal() {
-		System.out.println("\nNOME: "+this.nome+"\nESPECIE: "+this.especie+"\nQUANTIDADE DE PATAS: "+this.quantPatas+"\nPESO: "+this.peso+"KG");
+	@Override
+	public String toString() {
+		return  "NOME: "+this.nome+
+				"\nESPECIE: "+this.especie+
+				"\nQUANTIDADE DE PATAS: "+this.quantPatas+
+				"\nPESO: "+this.peso+"KG";
 	}
 }

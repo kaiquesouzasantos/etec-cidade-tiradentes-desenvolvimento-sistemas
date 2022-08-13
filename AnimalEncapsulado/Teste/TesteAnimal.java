@@ -1,5 +1,4 @@
 package AnimalEncapsulado.Teste;
-
 import AnimalEncapsulado.Entidade.Animal;
 
 public class TesteAnimal {
@@ -26,17 +25,17 @@ public class TesteAnimal {
 
 		// SAIDA
 		System.out.println("----------------------------------------------------------------------------------");
-		primeiroAnimal.imprimirValoresAnimal();
+		System.out.println(primeiroAnimal);
 
 		System.out.println("----------------------------------------------------------------------------------");
-		segundoAnimal.imprimirValoresAnimal();
+		System.out.println(segundoAnimal);
 
 		System.out.println("----------------------------------------------------------------------------------");
-		terceiroAnimal.imprimirValoresAnimal();
+		System.out.println(terceiroAnimal);
 
 		System.out.println("----------------------------------------------------------------------------------");
-		quartoAnimal.imprimirValoresAnimal();
-
+		System.out.println(quartoAnimal);
+		
 		System.out.println("----------------------------------------------------------------------------------");
 	}
 }
