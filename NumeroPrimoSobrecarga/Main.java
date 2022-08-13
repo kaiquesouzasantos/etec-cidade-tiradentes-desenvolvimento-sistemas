@@ -15,6 +15,7 @@ public class Main {
             verificador = JOptionPane.showConfirmDialog(null, "Deseja Continuar? ");
         }while(verificador == JOptionPane.YES_NO_OPTION);
 
-        JOptionPane.showMessageDialog(null, numero.verificaPrimo(numRecebidos));
+        JOptionPane.showMessageDialog(
+                null, numero.verificaPrimo(numRecebidos), "NUMEROS", JOptionPane.INFORMATION_MESSAGE);
     }
 }
