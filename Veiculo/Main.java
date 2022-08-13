@@ -15,21 +15,25 @@ public class Main{
             System.exit(0);
         }
 
-        String modelo = JOptionPane.showInputDialog("DIGITE O MODELO: ");
-        String marca = JOptionPane.showInputDialog("DIGITE A MARCA: ");
+        String modelo = JOptionPane.showInputDialog(
+                null,"DIGITE O MODELO: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
+        String marca = JOptionPane.showInputDialog(
+                null, "DIGITE A MARCA: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
 
         if(opcao == 1 || opcao == 2){
-            String cor = JOptionPane.showInputDialog("DIGITE A COR: ");
+            String cor = JOptionPane.showInputDialog(
+                    null, "DIGITE A COR: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
 
             if(opcao == 1) apresentaVeiculo(new Carro(modelo, marca, cor));
             else apresentaVeiculo(new Moto(modelo, marca, cor));
         }else{
-            int potencia = Integer.parseInt(JOptionPane.showInputDialog("DIGITE A POTENCIA: "));
+            int potencia = Integer.parseInt(JOptionPane.showInputDialog(
+                    null,"DIGITE A POTENCIA: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE));
             apresentaVeiculo(new Caminhao(modelo, marca, potencia));
         }
     }
 
     public static void apresentaVeiculo(Object veiculo){
-        JOptionPane.showMessageDialog(null, veiculo);
+        JOptionPane.showMessageDialog(null, veiculo, "REGISTRO", JOptionPane.INFORMATION_MESSAGE);
     }
 }
