@@ -6,25 +6,25 @@ public class Cachorro extends Animal{
     }
 
     @Override
-    public String correr() {
+    public String corre() {
         return "Os cachorros atingem a velocidade de 30 km/h";
     }
 
-    public String alimentar() {
+    public String come() {
         return "Os cachorros se alimentam de racao";
     }
 
-    public String dormir() {
+    public String dorme() {
         return "Os cachorros dormem 8 horas por dia";
     }
 
-    public String emitirSom() {
+    public String fala() {
         return "O som emitido pelos cachorros e: au-au-au";
     }
 
     public String toString() {
         return "TIPO: CACHORRO\n"
                 +getNome()+" | "+getCor()+" | "+getPeso()+"kg\n"+
-                correr()+"\n"+alimentar()+"\n"+emitirSom()+"\n"+dormir()+"\n";
+                corre()+"\n"+come()+"\n"+fala()+"\n"+dorme()+"\n";
     }
 }

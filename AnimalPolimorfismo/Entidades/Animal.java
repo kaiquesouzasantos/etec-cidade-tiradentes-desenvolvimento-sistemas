@@ -21,8 +21,8 @@ public abstract class Animal {
     public void setPeso(double peso) {this.peso = peso;}
 
     // PARTICULARIDADES
-    public abstract String correr();
-    public abstract String alimentar();
-    public abstract String dormir();
-    public abstract String emitirSom();
+    public abstract String corre();
+    public abstract String come();
+    public abstract String dorme();
+    public abstract String fala();
 }
