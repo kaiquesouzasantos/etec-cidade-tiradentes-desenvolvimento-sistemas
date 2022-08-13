@@ -6,11 +6,17 @@ public class Main {
 	public static void main(String[] args) {
 		Animal animal = new Animal();
 
-		animal.nome = JOptionPane.showInputDialog("DIGITE O NOME DO ANIMAL: ");
-		animal.especie = JOptionPane.showInputDialog("DIGITE A ESPÉCIE: ");
-		animal.quantPatas = Integer.parseInt(JOptionPane.showInputDialog("DIGITE A QUANTIDADE DE PATAS: "));
-		animal.peso = Double.parseDouble(JOptionPane.showInputDialog("DIGITE O PESO EM KG(QUILOGRAMA): "));
+		animal.nome = JOptionPane.showInputDialog(
+				null, "DIGITE O NOME DO ANIMAL: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
+		animal.especie = JOptionPane.showInputDialog(
+				null, "DIGITE A ESPÉCIE: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
+		animal.quantPatas = Integer.parseInt(JOptionPane.showInputDialog(
+				null, "DIGITE A QUANTIDADE DE PATAS: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
+		animal.peso = Double.parseDouble(JOptionPane.showInputDialog(
+				null, "DIGITE O PESO EM KG(QUILOGRAMA): ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
 
-		animal.imprimirValoresAnimal();
+		JOptionPane.showMessageDialog(
+				null, animal, "ANIMAL", JOptionPane.INFORMATION_MESSAGE
+		);
 	}
 }
