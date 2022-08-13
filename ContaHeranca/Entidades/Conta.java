@@ -25,15 +25,21 @@ public abstract class Conta {
 
     public String depositar(double depositoValor) {
         this.saldoConta += depositoValor;
-        return "-------------------------------------\nDEPOSITO CONCLUIDO COM SUCESSO\n-------------------------------------";
+        return  "--------------------------------------------------------------------------\n" +
+                "DEPOSITO CONCLUIDO COM SUCESSO" +
+                "\n--------------------------------------------------------------------------";
     }
 
     public String sacar(double saqueValor) {
         if(saqueValor <= this.saldoConta) {
             this.saldoConta -= saqueValor;
-            return "-------------------------------------\nSAQUE CONCLUIDO COM SUCESSO\n-------------------------------------";
+            return  "--------------------------------------------------------------------------\n" +
+                    "SAQUE CONCLUIDO COM SUCESSO" +
+                    "\n--------------------------------------------------------------------------";
         }
-        return "-------------------------------------\nVALOR INDISPONIVEL\n-------------------------------------";
+        return  "--------------------------------------------------------------------------\n" +
+                "VALOR INDISPONIVEL" +
+                "\n--------------------------------------------------------------------------";
     }
 
     public String toString() {

@@ -15,9 +15,9 @@ public class ContaPoupanca extends Conta {
     public String depositar(double depositoValor) {
         setSaldoConta(getSaldoConta() + depositoValor);
         calculaRendimento();
-        return "-------------------------------------\n" +
+        return  "--------------------------------------------------------------------------\n" +
                 "DEPOSITO CONCLUIDO COM SUCESSO" +
-                "\n-------------------------------------";
+                "\n--------------------------------------------------------------------------";
     }
 
     public String toString() {

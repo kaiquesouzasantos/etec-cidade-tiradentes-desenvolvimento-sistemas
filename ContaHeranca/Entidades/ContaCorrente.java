@@ -15,20 +15,20 @@ public class ContaCorrente extends Conta{
     public String sacar(double saqueValor) {
         if(saqueValor <= getSaldoConta()) {
             setSaldoConta(getSaldoConta() - saqueValor);
-            return "-------------------------------------\n" +
-                    "SAQUE CONCLUIDO COM SUCESSO\n" +
-                    "-------------------------------------";
+            return  "--------------------------------------------------------------------------\n" +
+                    "SAQUE CONCLUIDO COM SUCESSO" +
+                    "\n--------------------------------------------------------------------------";
         }else if(saqueValor <= getSaldoConta() + limite){
             saqueValor = getSaldoConta() - saqueValor;
             setSaldoConta(0);
             setLimite(getLimite() - saqueValor);
-            return "-------------------------------------\n" +
+            return  "--------------------------------------------------------------------------\n" +
                     "SAQUE CONCLUIDO COM SUCESSO" +
-                    "\n-------------------------------------";
+                    "\n--------------------------------------------------------------------------";
         }
-        return "-------------------------------------\n" +
+        return "--------------------------------------------------------------------------\n" +
                 "VALOR INDISPONIVEL" +
-                "\n-------------------------------------";
+                "\n--------------------------------------------------------------------------";
     }
 
     public String toString() {
