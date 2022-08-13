@@ -4,9 +4,16 @@ import javax.swing.*;
 
 public class Main{
     public static void main(String[] args){
-        int opcao = Integer.parseInt(JOptionPane.showInputDialog("[1] - CARRO  |  [2] - MOTOCICLETA  |  [3] - CAMINHAO\n\nDIGITE O QUE DESEJA CADASTRAR: "));
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog(
+                null, "[1] - CARRO  |  [2] - MOTOCICLETA  |  [3] - CAMINHAO\n\nDIGITE O QUE DESEJA CADASTRAR: ",
+                "MENU", JOptionPane.INFORMATION_MESSAGE
+        ));
 
-        if(opcao != 1 && opcao != 2 && opcao != 3) System.exit(0);
+        if(opcao != 1 && opcao != 2 && opcao != 3){
+            JOptionPane.showMessageDialog(
+                    null, "OPCAO INVALIDA!", "MENU", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
 
         String modelo = JOptionPane.showInputDialog("DIGITE O MODELO: ");
         String marca = JOptionPane.showInputDialog("DIGITE A MARCA: ");
