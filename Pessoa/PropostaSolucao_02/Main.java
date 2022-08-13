@@ -5,10 +5,14 @@ public class Main {
     public static void main(String[] args) {
         Pessoa pessoa = new Pessoa();
 
-        pessoa.setNome(JOptionPane.showInputDialog("DIGITE SEU NOME: "));
-        pessoa.setAltura(Double.parseDouble(JOptionPane.showInputDialog("DIGITE SUA ALTURA: ")));
-        pessoa.setAnoNascimento(Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA DATA DE NASCIMENTO: ")));
+        pessoa.setNome(JOptionPane.showInputDialog(
+                null, "DIGITE SEU NOME: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
+        pessoa.setAltura(Double.parseDouble(JOptionPane.showInputDialog(
+                null,"DIGITE SUA ALTURA: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
+        pessoa.setAnoNascimento(Integer.parseInt(JOptionPane.showInputDialog(
+                null, "DIGITE SUA DATA DE NASCIMENTO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
 
-        JOptionPane.showMessageDialog(null, pessoa);
+        JOptionPane.showMessageDialog(
+                null, pessoa, "PESSOA", JOptionPane.INFORMATION_MESSAGE);
     }
 }
