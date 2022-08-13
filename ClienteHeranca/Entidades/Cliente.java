@@ -31,4 +31,13 @@ public class Cliente {
     public double calculaDesconto(){
         return valorPedido * 0.1;
     }
+
+    @Override
+    public String toString() {
+        return  "NOME: "+this.nome+"\n"+
+                "ENDERECO: "+this.endereco+"\n"+
+                "IDADE: "+this.idade+"\n"+
+                "VALOR DO PEDIDO: R$"+this.valorPedido+"\n"+
+                "DESCONTO: R$"+this.desconto;
+    }
 }
