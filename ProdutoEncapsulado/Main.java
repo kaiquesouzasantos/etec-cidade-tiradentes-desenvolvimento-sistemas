@@ -1,21 +1,26 @@
 package ProdutoEncapsulado;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Main {
 	public static void main(String[] args) {
-		Scanner in = new Scanner (System.in);
 		Produto produto = new Produto();
 
-		System.out.print("INFORME O NOME DO PRODUTO: ");
-		produto.setNomeProduto(in.next());
+		produto.setNomeProduto(JOptionPane.showInputDialog(
+				null, "INFORME O NOME DO PRODUTO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
 		do{
-			System.out.print("INFORME O PRECO DE CUSTO: ");
-			produto.setPrecoCusto(in.nextDouble());
-			System.out.print("INFORME O PRECO DE VENDA: ");
-			produto.setPrecoVenda(in.nextDouble());
+			produto.setPrecoCusto(Double.parseDouble(JOptionPane.showInputDialog(
+					null, "INFORME O PRECO DE CUSTO: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
+
+			produto.setPrecoVenda(Double.parseDouble(JOptionPane.showInputDialog(
+					null, "INFORME O PRECO DE VENDA: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
+
+			if(!produto.precoVendaValidacao)
+				JOptionPane.showMessageDialog(
+						null, "PRECO INVIAVEL, DIGITE NOVAMENTE!", "AVISO", JOptionPane.WARNING_MESSAGE);
 		}while(!produto.precoVendaValidacao);
 
 		produto.calcularMargemLucro();
-		System.out.println(produto);
+		JOptionPane.showMessageDialog(
+				null, produto, "PRODUTO", JOptionPane.INFORMATION_MESSAGE);
 	}
 }

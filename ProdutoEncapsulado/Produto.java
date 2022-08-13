@@ -18,7 +18,6 @@ public class Produto {
 	public void setPrecoCusto(double precoCusto) {this.precoCusto = precoCusto;}
 	public void setPrecoVenda(double precoVenda) {
 		if(precoVenda < precoCusto) {
-			System.out.println("VALOR DE VENDA INCOMPATIVEL, DIGITE NOVAMENTE!");
 			precoVendaValidacao = false;
 		}else {
 			this.precoVenda = precoVenda;
