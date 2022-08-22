@@ -1,13 +1,12 @@
-# ETEC199-2022-DS
+<h1 align=center>ETEC199-2022-DS</h1>
 
-## SOBRE
+### SOBRE
 
 - Diretório contendo desenvolvimento dos exercícios na disciplina de Desenvolvimento de Sistemas(DS) na Etec Cidade Tiradentes em 2022.
 - Possui pequenos projetos submetidos como proposta de solução, com o intuito de atender aos requisitos solicitados.
 
 #
-
-## CONTEUDO ABORDADO
+### CONTEUDO ABORDADO
 
 - Encapsulamento;
 - Sobrecarga;
@@ -27,14 +26,11 @@
 
 
 #
-
-
-## TECNOLOGIA
+### TECNOLOGIA
 - [Java](https://docs.oracle.com/en/java)
 
 #
-
-## CONTRIBUIÇÃO
+### CONTRIBUIÇÃO
 
 ```
 $ git clone https://github.com/kaiquesouzasantos/etec199-2022-ds.git 
