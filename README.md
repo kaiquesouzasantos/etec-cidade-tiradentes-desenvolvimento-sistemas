@@ -8,6 +8,7 @@
 #
 ### CONTEUDO ABORDADO
 
+- Classes e Objetos;
 - Encapsulamento;
 - Sobrecarga;
 - Herança;
@@ -23,7 +24,6 @@
 - Leitura e Manipulação de Arquivos;
 - Stream, Optional, Lambda e Generics;
 - Date, Time e Calendar; 
-
 
 #
 ### TECNOLOGIA
