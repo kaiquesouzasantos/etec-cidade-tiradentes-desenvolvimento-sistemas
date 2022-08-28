@@ -23,7 +23,7 @@
 - JDBC e JPA;
 - Leitura e Manipulação de Arquivos;
 - Stream, Optional, Lambda e Generics;
-- Date, Time e Calendar; 
+- Date, Time e Calendar.
 
 #
 ### TECNOLOGIA
