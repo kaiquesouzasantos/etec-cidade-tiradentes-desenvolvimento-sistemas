@@ -1,5 +1,10 @@
 <h1 align=center>ETEC199-2022-DS</h1>
 
+<p align="center">
+  <img src="etec_l.png" width="500">
+</p>
+
+#
 ### SOBRE
 
 - Diretório contendo desenvolvimento dos exercícios na disciplina de Desenvolvimento de Sistemas(DS) na Etec Cidade Tiradentes em 2022.
