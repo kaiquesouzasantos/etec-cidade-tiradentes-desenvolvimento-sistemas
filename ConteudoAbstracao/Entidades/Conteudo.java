@@ -19,8 +19,10 @@ public abstract class Conteudo {
     public void setDuracao(int duracao) {
         if(duracao > 60)
             this.duracao = ((int) (duracao/60)) + "H" + (duracao%60) + "Min";
-        else
+        else if(duracao <= 60 && duracao > 0)
             this.duracao = duracao + "Min";
+        else
+            this.duracao = "Indisponivel";
     }
 
     public abstract String descricaoConteudo();
