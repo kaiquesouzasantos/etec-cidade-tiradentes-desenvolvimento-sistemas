@@ -4,9 +4,10 @@ public abstract class Conteudo {
     private String categoria, titulo, duracao;
 
     public Conteudo() {}
-    public Conteudo(String categoria, String titulo) {
+    public Conteudo(String categoria, String titulo, int duracao) {
         this.categoria = categoria;
         this.titulo = titulo;
+        this.setDuracao(duracao);
     }
 
     public String getCategoria() {return categoria;}

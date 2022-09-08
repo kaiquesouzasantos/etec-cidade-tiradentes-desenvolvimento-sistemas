@@ -5,8 +5,7 @@ public class Serie extends Conteudo {
 
     public Serie() {}
     public Serie(String categoria, String titulo, int duracao, int quantEpisodios, int quantTemporadas) {
-        super(categoria, titulo);
-        this.setDuracao(duracao);
+        super(categoria, titulo, duracao);
         this.quantEpisodios = quantEpisodios;
         this.quantTemporadas = quantTemporadas;
     }
