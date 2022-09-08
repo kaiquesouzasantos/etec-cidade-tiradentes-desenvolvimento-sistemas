@@ -3,6 +3,7 @@ package ConteudoAbstracao.Entidades;
 public class Serie extends Conteudo {
     private int quantEpisodios, quantTemporadas;
 
+    public Serie() {}
     public Serie(String categoria, String titulo, int duracao, int quantEpisodios, int quantTemporadas) {
         super(categoria, titulo);
         this.setDuracao(duracao);
@@ -23,6 +24,7 @@ public class Serie extends Conteudo {
                 "CATEGORIA: "+this.getCategoria()+"\n"+
                 "DURACAO MEDIA DE EPSODIO: "+this.getDuracao()+"\n"+
                 "EPSODIOS: "+this.quantEpisodios+"\n"+
-                "TEMPORADAS: "+this.quantTemporadas;
+                "TEMPORADAS: "+this.quantTemporadas+
+                "\n------------------------------------------------------------------------\n";
     }
 }

@@ -19,11 +19,14 @@ public class Main {
                 "MENU", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
 
         if(opcao.equals("FILMES"))
-            JOptionPane.showMessageDialog(null, controller.catalogo("filme"), "FILMES", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null, controller.catalogo(new Filme()), "CATALOGO DE FILMES", JOptionPane.INFORMATION_MESSAGE);
         else if(opcao.equals("SERIES"))
-            JOptionPane.showMessageDialog(null, controller.catalogo("serie"), "SERIES", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null, controller.catalogo(new Serie()), "CATALOGO DE SERIES", JOptionPane.INFORMATION_MESSAGE);
         else if(opcao.equals("TUDO"))
-            JOptionPane.showMessageDialog(null, controller.catalogo("tudo"), "TUDO", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null, controller.catalogo(), "CATALOGO", JOptionPane.INFORMATION_MESSAGE);
         else
             System.exit(0);
     }

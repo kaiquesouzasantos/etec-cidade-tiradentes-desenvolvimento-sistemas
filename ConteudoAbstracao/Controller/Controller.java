@@ -12,32 +12,28 @@ public class Controller {
         this.listaConteudo.add(conteudo);
     }
 
-    public void add(List<Conteudo> listaConteudo) {
+    public void add(List<? extends Conteudo> listaConteudo) {
         for (Conteudo conteudo : listaConteudo) {
             add(conteudo);
         }
     }
 
-    public String catalogo(String tipo){
+    public String catalogo(){
         String catalogo = "";
 
         for(Conteudo conteudo : this.listaConteudo){
-            if(tipo.equalsIgnoreCase("filme")){
-                if(conteudo instanceof Filme) {
-                    catalogo +=
-                            conteudo.descricaoConteudo() +
-                                    "\n------------------------------------------------------------------------\n";
-                }
-            } else if(tipo.equalsIgnoreCase("serie")) {
-                if(conteudo instanceof Serie) {
-                    catalogo +=
-                            conteudo.descricaoConteudo() +
-                                    "\n------------------------------------------------------------------------\n";
-                }
-            } else{
-                catalogo +=
-                        conteudo.descricaoConteudo() +
-                                "\n------------------------------------------------------------------------\n";
+            catalogo += conteudo.descricaoConteudo();
+        }
+
+        return catalogo;
+    }
+
+    public String catalogo(Conteudo tipo){
+        String catalogo = "";
+
+        for(Conteudo conteudo : this.listaConteudo){
+            if(conteudo.getClass() == tipo.getClass()) {
+                catalogo += conteudo.descricaoConteudo();
             }
         }
 

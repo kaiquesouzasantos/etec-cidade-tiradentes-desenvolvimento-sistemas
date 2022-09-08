@@ -1,6 +1,7 @@
 package ConteudoAbstracao.Entidades;
 
 public class Filme extends Conteudo {
+    public Filme() {}
     public Filme(String categoria, String titulo, int duracao) {
         super(categoria, titulo);
         this.setDuracao(duracao);
@@ -11,6 +12,7 @@ public class Filme extends Conteudo {
         return
                 "TITULO: "+this.getTitulo()+"\n"+
                 "CATEGORIA: "+this.getCategoria()+"\n"+
-                "DURACAO: "+this.getDuracao();
+                "DURACAO: "+this.getDuracao()+
+                "\n------------------------------------------------------------------------\n";
     }
 }
