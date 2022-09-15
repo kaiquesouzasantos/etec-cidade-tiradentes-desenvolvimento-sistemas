@@ -39,6 +39,7 @@ public class Main {
             if(!opcao.equals("CARRO") && !opcao.equals("MOTO")) {
                 JOptionPane.showMessageDialog(
                         null, "OPERACAO INVALIDA, CADASTRO DESCONTINUADO!", "MENU", JOptionPane.ERROR_MESSAGE);
+                run();
             }else {
                 cadastraVeiculo(opcao);
             }
