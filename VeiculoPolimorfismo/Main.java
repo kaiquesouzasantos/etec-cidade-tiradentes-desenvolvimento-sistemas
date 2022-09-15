@@ -9,13 +9,15 @@ public class Main {
         List<Veiculo> veiculos = new ArrayList<>();
         int continua;
 
-        do{
-            int opcao = Integer.parseInt(JOptionPane.showInputDialog(
-                    null, "[1] - CARRO\n[2] - MOTOCICLETA\n\nDIGITE O TIPO DE VEICULO: ",
-                    "MENU", JOptionPane.QUESTION_MESSAGE
-            ));
+        Object[] opcoes = {"NENHUM", "CARRO", "MOTO"};
 
-            if(opcao != 1 && opcao != 2) {
+        do{
+            Object opcao = JOptionPane.showInputDialog(
+                    null, "SELECIONE O TIPO VEICULO: ",
+                    "MENU", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]
+            );
+
+            if(!opcao.equals("CARRO") && !opcao.equals("MOTO")) {
                 JOptionPane.showMessageDialog(
                         null, "OPERACAO INVALIDA, CADASTRO DESCONTINUADO!", "MENU", JOptionPane.ERROR_MESSAGE);
             }else{
@@ -28,7 +30,7 @@ public class Main {
                 double valor = Double.parseDouble(JOptionPane.showInputDialog(
                         null,"DIGITE O VALOR: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
 
-                if(opcao == 1){
+                if(opcao.equals("CARRO")){
                     veiculos.add(new Carro(modelo,cor,combustivel,valor));
                 }else {
                     veiculos.add(new Motocicleta(modelo,cor,combustivel,valor));
