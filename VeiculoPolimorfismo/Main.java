@@ -20,7 +20,7 @@ public class Main {
             if(!opcao.equals("CARRO") && !opcao.equals("MOTO")) {
                 JOptionPane.showMessageDialog(
                         null, "OPERACAO INVALIDA, CADASTRO DESCONTINUADO!", "MENU", JOptionPane.ERROR_MESSAGE);
-            }else{
+            }else {
                 String modelo = JOptionPane.showInputDialog(
                         null, "DIGITE O MODELO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
                 String cor = JOptionPane.showInputDialog(
@@ -30,7 +30,7 @@ public class Main {
                 double valor = Double.parseDouble(JOptionPane.showInputDialog(
                         null,"DIGITE O VALOR: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
 
-                if(opcao.equals("CARRO")){
+                if(opcao.equals("CARRO")) {
                     veiculos.add(new Carro(modelo,cor,combustivel,valor));
                 }else {
                     veiculos.add(new Motocicleta(modelo,cor,combustivel,valor));
