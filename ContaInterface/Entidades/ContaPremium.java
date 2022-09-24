@@ -18,6 +18,10 @@ public class ContaPremium extends Conta {
         return tributo.calcularImposto(getSaldoConta() + getLimite());
     }
 
+    private void taxaConta(){
+        setSaldoConta(getSaldoConta() - tributacao());
+    }
+
     @Override
     public String sacar(double saqueValor) {
         if(saqueValor <= getSaldoConta()) {

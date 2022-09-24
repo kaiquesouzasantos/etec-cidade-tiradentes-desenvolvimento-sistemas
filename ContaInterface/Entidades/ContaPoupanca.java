@@ -19,6 +19,10 @@ public class ContaPoupanca extends Conta {
         return tributo.calcularImposto(getSaldoConta());
     }
 
+    private void taxaConta(){
+        setSaldoConta(getSaldoConta() - tributacao());
+    }
+
     @Override
     public String depositar(double depositoValor) {
         setSaldoConta(getSaldoConta() + depositoValor);
