@@ -28,7 +28,10 @@
 - JDBC e JPA;
 - Leitura e Manipulação de Arquivos;
 - Stream, Optional, Lambda e Generics;
-- Date, Time e Calendar.
+- Date, Time e Calendar;
+- Contextualização, Composição, Clean Code e Design Patterns;
+- Spring: Boot, Web, Security e Data;
+- Thymeleaf, Stella e Lombok.
 
 #
 ### TECNOLOGIA
