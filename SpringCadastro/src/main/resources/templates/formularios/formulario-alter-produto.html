@@ -44,7 +44,7 @@
             <div class="card-body">
                 <h5 class="card-title">ATUALIZAÇÃO DE PRODUTO</h5>
                 <form method="POST" action="/produto/edita" th:if="${produto}">
-                    <input type="hidden" th:value="${produto.id}">
+                    <input type="hidden" th:value="${produto.id}" name="id">
                     <div class="mb-3 row">
                         <div class="col">
                             <label class="form-label data-form">Nome</label>

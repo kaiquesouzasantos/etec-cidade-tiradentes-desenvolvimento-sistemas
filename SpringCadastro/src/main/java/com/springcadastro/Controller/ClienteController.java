@@ -11,28 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/cliente")
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @RequestMapping("/cliente")
+    @RequestMapping("")
     public String getForm(){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         return "formularios/formulario-cliente";
     }
 
-    @RequestMapping("/cliente/lista")
+    @RequestMapping("/lista")
     public ModelAndView getList(){
         ModelAndView view = new ModelAndView("listas/lista-cliente.html");
         view.addObject("listaCliente", this.clienteService.getListaCliente());
         return view;
     }
 
-    @PostMapping("/cliente/cadastro")
+    @PostMapping("/cadastro")
     public String save(Cliente cliente){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new ClientePattern(cliente).verificacao()){
             clienteService.save(cliente);
             return "avisos/aviso-sucesso";
@@ -41,10 +44,11 @@ public class ClienteController {
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/cliente/deleta")
+    @PostMapping("/deleta")
     public String delete(String id){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         clienteService.delete(id);
         return "avisos/aviso-sucesso";
     }
@@ -52,7 +56,8 @@ public class ClienteController {
     @PostMapping("/cliente/edita")
     public String edit(Cliente cliente){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new ClientePattern(cliente).verificacao()){
             clienteService.save(cliente);
             return "avisos/aviso-sucesso";
@@ -61,7 +66,7 @@ public class ClienteController {
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/cliente/form-edita")
+    @PostMapping("/form-edita")
     public ModelAndView getFormEdit(String id){
         ModelAndView view = new ModelAndView("formularios/formulario-alter-cliente.html");
         view.addObject("cliente", this.clienteService.getCliente(id));

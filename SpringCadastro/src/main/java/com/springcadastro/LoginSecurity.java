@@ -3,6 +3,7 @@ package com.springcadastro;
 public class LoginSecurity {
     private boolean logado;
     private static LoginSecurity loginSecurity;
+    public static final String REDIRECT = "redirect:/login";
 
     public static LoginSecurity getInstance(){
         if(loginSecurity == null)

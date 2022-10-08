@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/produto")
 public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
@@ -20,24 +21,25 @@ public class ProdutoController {
     @Autowired
     private FornecedorService fornecedorService;
 
-    @RequestMapping("/produto")
+    @RequestMapping("")
     public ModelAndView getProduto(){
         ModelAndView view = new ModelAndView("formularios/formulario-produto.html");
         view.addObject("listaFornecedor", this.fornecedorService.getListaFornecedor());
         return view;
     }
 
-    @GetMapping("/produto/lista")
+    @GetMapping("/lista")
     public ModelAndView getFormAdd(){
         ModelAndView view = new ModelAndView("listas/lista-produto.html");
         view.addObject("listaProduto", this.produtoService.getListaProduto());
         return view;
     }
 
-    @PostMapping("/produto/cadastro")
+    @PostMapping("/cadastro")
     public String save(Produto produto){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new ProdutoPattern(produto).verifica()){
             produtoService.save(produto);
             return "avisos/aviso-sucesso";
@@ -46,18 +48,20 @@ public class ProdutoController {
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/produto/deleta")
+    @PostMapping("/deleta")
     public String delete(String id){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         produtoService.delete(id);
         return "avisos/aviso-sucesso";
     }
 
-    @PostMapping("/produto/edita")
+    @PostMapping("/edita")
     public String edit(Produto produto){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new ProdutoPattern(produto).verifica()){
             produtoService.save(produto);
             return "avisos/aviso-sucesso";
@@ -66,7 +70,7 @@ public class ProdutoController {
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/produto/form-edita")
+    @PostMapping("/form-edita")
     public ModelAndView getFormEdit(String id){
         ModelAndView view = new ModelAndView("formularios/formulario-alter-produto.html");
         view.addObject("listaFornecedor", this.fornecedorService.getListaFornecedor());

@@ -45,7 +45,7 @@ public class FornecedorPattern {
         try {
             verificaEstadoInscricaoEstadual(this.fornecedor.getEstado()).assertValid(this.fornecedor.getInscricaoEstadual());
             return true;
-        } catch (InvalidStateException ignored){}
+        } catch (Exception ignored){}
 
         return false;
     }

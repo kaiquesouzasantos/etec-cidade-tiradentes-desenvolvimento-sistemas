@@ -11,47 +11,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/fornecedor")
 public class FornecedorController {
     @Autowired
     private FornecedorService fornecedorService;
 
-    @RequestMapping("/fornecedor")
+    @RequestMapping("")
     public String getForm(){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         return "formularios/formulario-fornecedor";
     }
 
-    @RequestMapping("/fornecedor/lista")
+    @RequestMapping("/lista")
     public ModelAndView getFormAdd(){
         ModelAndView view = new ModelAndView("listas/lista-fornecedor");
         view.addObject("listaFornecedor", this.fornecedorService.getListaFornecedor());
         return view;
     }
 
-    @PostMapping("/fornecedor/cadastro")
+    @PostMapping("/cadastro")
     public String save(Fornecedor fornecedor){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new FornecedorPattern(fornecedor).verifica()){
             fornecedorService.save(fornecedor);
             return "avisos/aviso-sucesso";
         }
+
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/fornecedor/deleta")
+    @PostMapping("/deleta")
     public String delete(String id){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
         fornecedorService.delete(id);
         return "avisos/aviso-sucesso";
     }
 
-    @PostMapping("/fornecedor/edita")
+    @PostMapping("/edita")
     public String edit(Fornecedor fornecedor){
         if(!LoginSecurity.getInstance().isLogado())
-            return "redirect:/login";
+            return LoginSecurity.REDIRECT;
+
         if(new FornecedorPattern(fornecedor).verifica()){
             fornecedorService.save(fornecedor);
             return "avisos/aviso-sucesso";
@@ -60,7 +65,7 @@ public class FornecedorController {
         return "avisos/aviso-falha";
     }
 
-    @PostMapping("/fornecedor/form-edita")
+    @PostMapping("/form-edita")
     public ModelAndView getFormEdit(String id){
         ModelAndView view = new ModelAndView("formularios/formulario-alter-fornecedor.html");
         view.addObject("fornecedor", this.fornecedorService.getFornecedor(id));
