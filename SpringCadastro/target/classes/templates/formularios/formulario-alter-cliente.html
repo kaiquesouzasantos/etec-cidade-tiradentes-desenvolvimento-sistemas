@@ -45,7 +45,7 @@
                 <h5 class="card-title">ATUALIZAÇÃO DE CLIENTE</h5>
                 <form method="POST" action="/cliente/edita" th:if="${cliente}">
                     <div class="mb-3 row">
-                        <input type="hidden" th:value="${cliente.id}">
+                        <input type="hidden" th:value="${cliente.id}" name="id">
                         <div class="col">
                             <label class="form-label data-form">Nome</label>
                             <input type="text" class="form-control " name="nome"

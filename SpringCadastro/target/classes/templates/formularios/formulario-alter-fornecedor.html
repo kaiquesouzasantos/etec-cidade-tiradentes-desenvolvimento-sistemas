@@ -44,7 +44,7 @@
             <div class="card-body">
                 <h5 class="card-title">ATUALIZAÇÃO DE FORNECEDOR</h5>
                 <form method="POST" action="/fornecedor/edita" th:if="${fornecedor}">
-                    <input type="hidden" th:value="${fornecedor.id}">
+                    <input type="hidden" th:value="${fornecedor.id}" name="id">
                     <div class="mb-3 row">
                         <div class="col">
                             <label class="form-label data-form">Razão Social</label>
