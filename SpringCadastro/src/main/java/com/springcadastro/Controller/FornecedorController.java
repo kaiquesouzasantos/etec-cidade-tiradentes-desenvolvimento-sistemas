@@ -1,5 +1,6 @@
 package com.springcadastro.Controller;
 
+import com.springcadastro.Component.GeradorListagem;
 import com.springcadastro.Component.LoginSecurity;
 import com.springcadastro.Model.*;
 import com.springcadastro.Pattern.FornecedorPattern;
@@ -29,6 +30,15 @@ public class FornecedorController {
         ModelAndView view = new ModelAndView("listas/lista-fornecedor");
         view.addObject("listaFornecedor", this.fornecedorService.getListaFornecedor());
         return view;
+    }
+
+    @RequestMapping("/download-lista")
+    public String getDownloadListaFornecedor(){
+        if(!LoginSecurity.getInstance().isLogado())
+            return LoginSecurity.REDIRECT;
+
+        new GeradorListagem().geraArquivoListagemFornecedor(fornecedorService.getListaFornecedor());
+        return "avisos/aviso-sucesso";
     }
 
     @PostMapping("/cadastro")

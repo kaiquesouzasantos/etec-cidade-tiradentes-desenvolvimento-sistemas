@@ -1,5 +1,6 @@
 package com.springcadastro.Controller;
 
+import com.springcadastro.Component.GeradorListagem;
 import com.springcadastro.Component.LoginSecurity;
 import com.springcadastro.Model.Produto;
 import com.springcadastro.Pattern.ProdutoPattern;
@@ -33,6 +34,15 @@ public class ProdutoController {
         ModelAndView view = new ModelAndView("listas/lista-produto.html");
         view.addObject("listaProduto", this.produtoService.getListaProduto());
         return view;
+    }
+
+    @RequestMapping("/download-lista")
+    public String getDownloadListaProduto(){
+        if(!LoginSecurity.getInstance().isLogado())
+            return LoginSecurity.REDIRECT;
+
+        new GeradorListagem().geraArquivoListagemProduto(produtoService.getListaProduto());
+        return "avisos/aviso-sucesso";
     }
 
     @PostMapping("/cadastro")

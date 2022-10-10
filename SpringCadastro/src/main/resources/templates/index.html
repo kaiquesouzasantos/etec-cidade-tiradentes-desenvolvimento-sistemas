@@ -30,6 +30,11 @@
         margin-bottom: 35px;
     }
 
+    .card-header {
+        background: rgb(131, 58, 180);
+        color: #fff;
+    }
+
     .title-container p {
         text-align: center;
         color: #fff;
@@ -42,33 +47,39 @@
         <h1>DS | Cadastro de Vendas</h1>
     </div>
     <div class="container">
-        <div class="card mb-3">
+        <div class="card text-center mb-4">
+            <div class="card-header">
+              Cliente
+            </div>
             <div class="card-body">
-                <h5 class="card-title">CLIENTE</h5>
-                <div class="row justify-content-evenly">
-                    <a class="btn btn-success col-5" href="/cliente">Cadastrar</a>
-                    <a class="btn btn-info col-5" href="/cliente/lista">Listar</a>
-                </div>
+              <div class="row justify-content-evenly">
+                <a class="btn btn-success col-5" href="/cliente">Cadastrar</a>
+                <a class="btn btn-warning col-5" href="/cliente/lista">Listar</a>
+            </div>
             </div>
         </div>
 
-        <div class="card mb-3">
+        <div class="card text-center mb-4">
+            <div class="card-header">
+              Fornecedor
+            </div>
             <div class="card-body">
-                <h5 class="card-title">FORNECEDOR</h5>
-                <div class="row justify-content-evenly">
-                    <a class="btn btn-success col-5" href="/fornecedor">Cadastrar</a>
-                    <a class="btn btn-info col-5" href="/fornecedor/lista">Listar</a>
-                </div>
+              <div class="row justify-content-evenly">
+                <a class="btn btn-success col-5" href="/fornecedor">Cadastrar</a>
+                <a class="btn btn-warning col-5" href="/fornecedor/lista">Listar</a>
+            </div>
             </div>
         </div>
 
-        <div class="card mb-3">
+        <div class="card text-center mb-4">
+            <div class="card-header">
+              Produto
+            </div>
             <div class="card-body">
-                <h5 class="card-title">PRODUTO</h5>
-                <div class="row justify-content-evenly">
-                    <a class="btn btn-success col-5" href="/produto/">Cadastrar</a>
-                    <a class="btn btn-info col-5" href="/produto/lista">Listar</a>
-                </div>
+              <div class="row justify-content-evenly">
+                <a class="btn btn-success col-5" href="/produto/">Cadastrar</a>
+                <a class="btn btn-warning col-5" href="/produto/lista">Listar</a>
+            </div>
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 package com.springcadastro.Controller;
 
+import com.springcadastro.Component.GeradorListagem;
 import com.springcadastro.Component.LoginSecurity;
 import com.springcadastro.Model.Cliente;
 import com.springcadastro.Pattern.ClientePattern;
@@ -29,6 +30,15 @@ public class ClienteController {
         ModelAndView view = new ModelAndView("listas/lista-cliente.html");
         view.addObject("listaCliente", this.clienteService.getListaCliente());
         return view;
+    }
+
+    @RequestMapping("/download-lista")
+    public String getDownloadListaCliente(){
+        if(!LoginSecurity.getInstance().isLogado())
+            return LoginSecurity.REDIRECT;
+
+        new GeradorListagem().geraArquivoListagemCliente(clienteService.getListaCliente());
+        return "avisos/aviso-sucesso";
     }
 
     @PostMapping("/cadastro")
