@@ -19,8 +19,9 @@
 - Design Patters, Clean Code e Contextualização;
 - Spring Boot, Spring Web e Spring Data(JPA - Hibernate);
 - Validação: CPF, CNPJ, Inscrição Estadual e campos obrigatorios;
-- Autenticação de Adminstrador;
-- Thymeleaf, Stella e Lombok;
+- Autenticação de Adminstrador e Restrição de Acesso;
+- Gerador de Arquivo Contendo a Listagem da Respectiva Entidade;
+- Thymeleaf, Stella e Lombok.
 
 #
 ### TECNOLOGIAS
