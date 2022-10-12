@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="author" content="Kaique Souza Santos">
+    <title>DS | Cadastro de Vendas</title>
+</head>
+
+<style>
+    h1 {
+        text-align: center;
+        margin-top: 5px;
+        color: #fff;
+    }
+
+    h5 {
+        text-align: center;
+    }
+
+    .title-container {
+        padding: 10px;
+        width: 100%;
+        height: 100px;
+        background: rgb(131, 58, 180);
+        background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+
+    .title-container p {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+</style>
+
+<body>
+    <div class="title-container"><h1>DS | Atualização de Produto</h1></div>
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">ATUALIZAÇÃO DE PRODUTO</h5>
+                <form method="POST" action="/produto/edita" th:if="${produto}">
+                    <input type="hidden" th:value="${produto.id}" name="id">
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <label class="form-label data-form">Nome</label>
+                            <input type="text" class="form-control" name="nome"
+                                minlength="2" maxlength="50" required th:value="${produto.nome}">
+                        </div>
+                        <div class="col">
+                            <label class="form-label data-form">Especie</label>
+                            <input type="text" class="form-control" name="especie"
+                                minlength="2" maxlength="50" required th:value="${produto.especie}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-4">
+                            <label class="form-label data-form">Preço</label>
+                            <input type="number" class="form-control" name="preco"
+                                min="1" maxlength="15" required th:value="${produto.preco}">
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label data-form">Quantidade</label>
+                            <input type="number" class="form-control" name="quantidade"
+                                 min="1" required th:value="${produto.quantidade}">
+                        </div>
+                        <div class="col-4">
+                            <label class="form-label data-form">Fornecedor</label>
+                            <select class="form-select" th:field="${produto.razaoFornecedor}" name="razaoFornecedor">
+                                <option th:each="fornecedor : ${listaFornecedor}" th:value="${fornecedor}" th:text="${fornecedor.razao}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col">
+                            <label class="form-label data-form">Descrição</label>
+                            <textarea class="form-control" rows="3" maxlength="500" name="descricao" th:text="${produto.descricao}"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="mb-3 btn btn-warning form-control">Atualizar</button>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <a class="btn btn-dark" href="../">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>
