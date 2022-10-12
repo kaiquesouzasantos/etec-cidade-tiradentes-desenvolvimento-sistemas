@@ -59,7 +59,7 @@ public class ClienteController {
             return LoginSecurity.REDIRECT;
 
         clienteService.delete(id);
-        return "avisos/aviso-sucesso";
+        return "redirect:/cliente/lista";
     }
 
     @PostMapping("/edita")

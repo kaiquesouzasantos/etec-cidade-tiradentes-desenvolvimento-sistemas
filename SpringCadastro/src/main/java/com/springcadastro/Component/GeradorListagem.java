@@ -1,8 +1,7 @@
 package com.springcadastro.Component;
 
 import com.springcadastro.Model.*;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.List;
 
 public class GeradorListagem {

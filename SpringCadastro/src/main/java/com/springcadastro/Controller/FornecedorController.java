@@ -58,7 +58,7 @@ public class FornecedorController {
         if(!LoginSecurity.getInstance().isLogado())
             return LoginSecurity.REDIRECT;
         fornecedorService.delete(id);
-        return "avisos/aviso-sucesso";
+        return "redirect:/fornecedor/lista";
     }
 
     @PostMapping("/edita")

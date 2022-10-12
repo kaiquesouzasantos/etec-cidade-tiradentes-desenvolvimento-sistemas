@@ -64,7 +64,7 @@ public class ProdutoController {
             return LoginSecurity.REDIRECT;
 
         produtoService.delete(id);
-        return "avisos/aviso-sucesso";
+        return "redirect:/produto/lista";
     }
 
     @PostMapping("/edita")
