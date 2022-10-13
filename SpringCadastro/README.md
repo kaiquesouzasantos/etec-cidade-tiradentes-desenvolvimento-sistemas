@@ -18,12 +18,13 @@
 - CRUD: Cadastro, Leitura, Alteração e Delete;
 - Design Patters, Clean Code e Contextualização;
 - Spring Boot, Spring Web e Spring Data(JPA - Hibernate);
-- Validação: CPF, CNPJ, Inscrição Estadual e campos obrigatorios;
+- Validação: CPF, CNPJ, Inscrição Estadual, campos quantitativos e preenchimento de campos obrigatorios;
 - Autenticação de Adminstrador e Restrição de Acesso;
 - Dashboard e Sumarização;
 - Gerador de Arquivo Contendo a Listagem da Respectiva Entidade;
 - Thymeleaf, Stella e Lombok.
 - Stream, Optional e Lambda a vontade;
+
 #
 ### TECNOLOGIAS
 - [JAVA]()
