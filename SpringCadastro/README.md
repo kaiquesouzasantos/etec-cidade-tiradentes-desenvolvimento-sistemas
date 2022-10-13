@@ -8,6 +8,7 @@
 ### SOBRE
 
 - Repositório contendo o desenvolvimento do projeto de interface gráfica na disciplina de Desenvolvimento de Sistemas na Etec Cidade Tiradentes.
+- <b>Quantidade de Telas</b>: 16
 - <b>Dados de Acesso</b>:
   - *Login*: adm
   - *Senha*: 123
