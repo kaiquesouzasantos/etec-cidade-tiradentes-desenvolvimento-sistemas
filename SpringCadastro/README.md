@@ -23,6 +23,7 @@
 - Autenticação de Adminstrador e Restrição de Acesso;
 - Dashboard e Sumarização;
 - Gerador de Arquivo Contendo a Listagem da Respectiva Entidade;
+- Paralelismo e Tratamento de Anomalias;
 - Thymeleaf, Stella e Lombok.
 - Stream, Optional e Lambda a vontade;
 
