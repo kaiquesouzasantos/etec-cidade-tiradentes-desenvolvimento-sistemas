@@ -9,30 +9,35 @@ import java.util.stream.Stream;
 
 @Data
 public class GeradorRelatorio {
-    private final List<Cliente> listaCliente;
-    private final List<Fornecedor> listaFornecedor;
-    private final List<Produto> listaProduto;
-    private final List<Venda> listaVenda;
+    private transient List<Cliente> listaCliente;
+    private transient List<Fornecedor> listaFornecedor;
+    private transient List<Produto> listaProduto;
+    private transient List<Venda> listaVenda;
 
-    private transient int numeroClientes, numeroFornecedores, numeroProdutos, numeroVendas, estoqueProdutos;
-    private transient double mediaPrecoProdutos, valorEstoque;
+    private volatile int numeroClientes, numeroFornecedores, numeroProdutos, numeroVendas, estoqueProdutos;
+    private volatile double mediaPrecoProdutos, valorEstoque;
 
     public GeradorRelatorio(List<Cliente> listaCliente,List<Fornecedor> listaFornecedor, List<Produto> listaProduto, List<Venda> listaVenda) {
+        try{
+            preencheListas(listaCliente, listaFornecedor, listaProduto, listaVenda);
+            geraRelatorio();
+        } catch (Exception ignored){}
+    }
+
+    private synchronized void preencheListas(
+            List<Cliente> listaCliente,List<Fornecedor> listaFornecedor, List<Produto> listaProduto, List<Venda> listaVenda
+    ){
         this.listaCliente = listaCliente;
         this.listaFornecedor = listaFornecedor;
         this.listaProduto = listaProduto;
         this.listaVenda = listaVenda;
-
-        run();
     }
 
-    private void run(){
-        try {
-            numeroDeComponentes();
-            estoqueProdutos();
-            mediaPrecoProduto();
-            valorEstoqueProdutos();
-        } catch(Exception ignored){}
+    private void geraRelatorio(){
+        numeroDeComponentes();
+        estoqueProdutos();
+        mediaPrecoProduto();
+        valorEstoqueProdutos();
     }
 
     private Stream<Cliente> getStreamCliente(){
@@ -63,7 +68,7 @@ public class GeradorRelatorio {
                 .map(Produto::getQuantidade)
                 .reduce(Integer::sum);
 
-        this.estoqueProdutos = estoque.isPresent() ? estoque.get() : 0;
+        this.estoqueProdutos = estoque.orElse(0);
     }
 
     private void valorEstoqueProdutos(){
@@ -71,14 +76,14 @@ public class GeradorRelatorio {
                 .map(produto -> produto.getQuantidade() * produto.getPreco())
                 .reduce(Double::sum);
 
-        this.valorEstoque = valor.isPresent() ? valor.get() : 0;
+        this.valorEstoque = valor.orElse(0.0);
     }
 
     private void mediaPrecoProduto(){
         Optional<Double> mediaPreco = getStreamProduto()
                 .map(Produto::getPreco)
-                .reduce(Double::sum);
+                .reduce(Double::sum).map(soma -> soma / numeroClientes);
 
-        this.mediaPrecoProdutos = mediaPreco.isPresent() ? mediaPreco.get() : 0;
+        this.mediaPrecoProdutos = mediaPreco.orElse(0.0);
     }
 }
