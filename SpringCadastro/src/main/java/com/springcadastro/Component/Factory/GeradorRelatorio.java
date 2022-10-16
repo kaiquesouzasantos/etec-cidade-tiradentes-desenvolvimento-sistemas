@@ -82,7 +82,7 @@ public class GeradorRelatorio {
     private void mediaPrecoProduto(){
         Optional<Double> mediaPreco = getStreamProduto()
                 .map(Produto::getPreco)
-                .reduce(Double::sum).map(soma -> soma / numeroClientes);
+                .reduce(Double::sum).map(soma -> soma / numeroProdutos);
 
         this.mediaPrecoProdutos = mediaPreco.orElse(0.0);
     }
