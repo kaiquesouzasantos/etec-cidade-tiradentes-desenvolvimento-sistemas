@@ -8,7 +8,7 @@
 ### SOBRE
 
 - Repositório contendo o desenvolvimento do projeto de interface gráfica na disciplina de Desenvolvimento de Sistemas na Etec Cidade Tiradentes.
-- Video de Apresentação do Projeto: https://youtu.be/sFki_ycoNao
+- <b>Video de Apresentação do Projeto</b>: https://youtu.be/sFki_ycoNao
 - <b>Quantidade de Telas</b>: 16
 - <b>Dados de Acesso</b>:
   - *Login*: adm
