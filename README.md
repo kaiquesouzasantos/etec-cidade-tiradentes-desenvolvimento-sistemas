@@ -30,12 +30,14 @@
 - Stream, Optional, Lambda e Generics;
 - Date, Time e Calendar;
 - Contextualização, Composição, Clean Code e Design Patterns;
-- Spring: Boot, Web, Security e Data;
+- *Spring*: Boot, Web e Data;
 - Thymeleaf, Stella e Lombok.
 
 #
-### TECNOLOGIA
+### TECNOLOGIAS
 - [Java](https://docs.oracle.com/en/java)
+- [Spring Boot]()
+- [MongoDB]()
 
 #
 ### CONTRIBUIÇÃO
