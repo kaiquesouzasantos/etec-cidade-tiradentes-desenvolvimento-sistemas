@@ -14,13 +14,9 @@
 ### CONTEUDO ABORDADO
 
 - Classes e Objetos;
-- Encapsulamento;
-- Sobrecarga;
-- Herança;
-- Sobreescrita;
-- Polimorfismo; 
-- Abstração;
-- Interface;
+- Encapsulamento e Sobrecarga;
+- Herança, Sobreescrita e Polimorfismo;
+- Abstração e Interface;
 - Enum;
 - Identificação e Tratamento de Exceções;
 - GUI (Swing e JOptionPane);
