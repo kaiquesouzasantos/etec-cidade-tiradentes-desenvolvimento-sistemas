@@ -6,17 +6,17 @@ public class Main {
 	public static void main(String[] args) {
 		Animal animal = new Animal();
 
-		animal.nome = JOptionPane.showInputDialog(
-				null, "DIGITE O NOME DO ANIMAL: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-		animal.especie = JOptionPane.showInputDialog(
-				null, "DIGITE A ESPÉCIE: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-		animal.quantPatas = Integer.parseInt(JOptionPane.showInputDialog(
-				null, "DIGITE A QUANTIDADE DE PATAS: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
-		animal.peso = Double.parseDouble(JOptionPane.showInputDialog(
-				null, "DIGITE O PESO EM KG(QUILOGRAMA): ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
+		animal.nome = exibePerguntaRecebeResposta("DIGITE O NOME DO ANIMAL: ", "INFORMACAO");
+		animal.especie = exibePerguntaRecebeResposta("DIGITE O ESPECIE DO ANIMAL: ", "INFORMACAO");
+		animal.quantPatas = Integer.parseInt(exibePerguntaRecebeResposta("DIGITE A QUANTIDADE DE PATAS DO ANIMAL: ", "INFORMACAO"));
+		animal.peso = Double.parseDouble(exibePerguntaRecebeResposta("DIGITE O PESO EM KG(QUILOGRAMA): ", "INFORMACAO"));
 
 		JOptionPane.showMessageDialog(
 				null, animal, "ANIMAL", JOptionPane.INFORMATION_MESSAGE
 		);
+	}
+
+	public static String exibePerguntaRecebeResposta(String message, String title){
+		return JOptionPane.showInputDialog(null, message, title, JOptionPane.QUESTION_MESSAGE);
 	}
 }
