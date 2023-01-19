@@ -4,35 +4,29 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        int opcao = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "[1] - CLIENTE\n[2] - CLIENTE PREMIUM\n\nDIGITE O TIPO DE CLIENTE: ",
-                "MENU", JOptionPane.QUESTION_MESSAGE
-        ));
+        int opcao = Integer.parseInt(exibePerguntaRecebeMensagem("[1] - CLIENTE\n[2] - CLIENTE PREMIUM\n\nDIGITE O TIPO DE CLIENTE: ", "Menu"));
 
         if(opcao != 1 && opcao != 2) {
-            JOptionPane.showMessageDialog(
-                    null, "OPCAO INVALIDA!", "MENU", JOptionPane.ERROR_MESSAGE);
+            exibeMensagem("OPCAO INVALIDA!", "MENU", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
 
-        String nome = JOptionPane.showInputDialog(
-                null, "DIGITE SEU NOME: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-        String endereco = JOptionPane.showInputDialog(
-                null, "DIGITE SEU ENDEREÇO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-        int idade = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "DIGITE SUA IDADE: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
-        double valorPedido = Double.parseDouble(JOptionPane.showInputDialog(
-                null, "VALOR DOS PEDIDOS: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
+        String nome = exibePerguntaRecebeMensagem("DIGITE SEU NOME: ", "INFORMACAO");
+        String endereco = exibePerguntaRecebeMensagem("DIGITE SEU ENDERECO: ", "INFORMACAO");
+        int idade = Integer.parseInt(exibePerguntaRecebeMensagem("DIGITE SUA IDADE: ", "INFORMACAO"));
+        double valorPedido = Double.parseDouble(exibePerguntaRecebeMensagem("VALOR DOS PEDIDOS: R$", "INFORMACAO"));
 
         if(opcao == 1)
-            apresentaCliente(new Cliente(nome, endereco, idade, valorPedido));
+            exibeMensagem(new Cliente(nome, endereco, idade, valorPedido).toString(), "CLIENTE", JOptionPane.INFORMATION_MESSAGE);
         else
-            apresentaCliente(new ClientePremium(nome, endereco, idade, valorPedido));
+            exibeMensagem(new ClientePremium(nome, endereco, idade, valorPedido).toString(), "CLIENTE", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    private static void apresentaCliente(Cliente cliente){
-        JOptionPane.showMessageDialog(
-                null, cliente, "CLIENTE", JOptionPane.INFORMATION_MESSAGE
-        );
+    private static void exibeMensagem(String messege, String title, int option){
+        JOptionPane.showMessageDialog(null, messege, title, option);
+    }
+
+    private static String exibePerguntaRecebeMensagem(String messege, String title){
+        return JOptionPane.showInputDialog(null, messege, title, JOptionPane.QUESTION_MESSAGE);
     }
 }
