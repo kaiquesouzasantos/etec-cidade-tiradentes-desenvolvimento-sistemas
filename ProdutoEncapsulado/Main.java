@@ -5,22 +5,26 @@ public class Main {
 	public static void main(String[] args) {
 		Produto produto = new Produto();
 
-		produto.setNomeProduto(JOptionPane.showInputDialog(
-				null, "INFORME O NOME DO PRODUTO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
-		do{
-			produto.setPrecoCusto(Double.parseDouble(JOptionPane.showInputDialog(
-					null, "INFORME O PRECO DE CUSTO: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
+		produto.setNomeProduto(exibePerguntaRecebeResposta("INFORME O NOME DO PRODUTO: "));
 
-			produto.setPrecoVenda(Double.parseDouble(JOptionPane.showInputDialog(
-					null, "INFORME O PRECO DE VENDA: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE)));
+		do{
+			produto.setPrecoCusto(Double.parseDouble(exibePerguntaRecebeResposta("INFORME O PRECO DE CUSTO: R$")));
+
+			produto.setPrecoVenda(Double.parseDouble(exibePerguntaRecebeResposta("INFORME O PRECO DE VENDA: R$")));
 
 			if(!produto.precoVendaValidacao)
-				JOptionPane.showMessageDialog(
-						null, "PRECO INVIAVEL, DIGITE NOVAMENTE!", "AVISO", JOptionPane.WARNING_MESSAGE);
+				exibeMensagem("PRECO INVIAVEL, DIGITE NOVAMENTE!", "AVISO", JOptionPane.WARNING_MESSAGE);
 		}while(!produto.precoVendaValidacao);
 
 		produto.calcularMargemLucro();
-		JOptionPane.showMessageDialog(
-				null, produto, "PRODUTO", JOptionPane.INFORMATION_MESSAGE);
+		exibeMensagem(produto.toString(), "PRODUTO", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public static void exibeMensagem(String message, String title, int option){
+		JOptionPane.showMessageDialog(null, message, title, option);
+	}
+	
+	private static String exibePerguntaRecebeResposta(String message){
+		return JOptionPane.showInputDialog(null, message, "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
 	}
 }
