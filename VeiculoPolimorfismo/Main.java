@@ -11,34 +11,23 @@ public class Main {
     }
 
     private static void run(){
-        Object[] opcoes = {"NENHUM", "CADASTRAR", "VISUALIZAR"};
-
-        Object opcao = JOptionPane.showInputDialog(
-                null, "SELECIONE A OPERACAO: ",
-                "MENU", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]
-        );
+        Object opcao = exibeMenuRecebeResposta("SELECIONE A OPERACAO: ", "MENU", new Object[]{"NENHUM", "CADASTRAR", "VISUALIZAR"});
 
         if(opcao.equals("CADASTRAR")){
-            cadastrarVeiculos();
+            cadastraVeiculos();
         } else if (opcao.equals("VISUALIZAR")) {
-            JOptionPane.showMessageDialog(
-                    null, controller.listagemVeiculos(), "VEICULOS", JOptionPane.INFORMATION_MESSAGE);
+            exibeMensagem(controller.listagemVeiculos(), "VEICULOS");
         }
     }
 
-    private static void cadastrarVeiculos(){
+    private static void cadastraVeiculos(){
         int continua;
-        Object[] opcoes = {"NENHUM", "CARRO", "MOTO"};
 
         do{
-            Object opcao = JOptionPane.showInputDialog(
-                    null, "SELECIONE O TIPO VEICULO: ",
-                    "MENU", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]
-            );
+            Object opcao = exibeMenuRecebeResposta("SELECIONE O TIPO VEICULO: ", "MENU", new Object[]{"NENHUM", "CARRO", "MOTO"});
 
             if(!opcao.equals("CARRO") && !opcao.equals("MOTO")) {
-                JOptionPane.showMessageDialog(
-                        null, "OPERACAO INVALIDA, CADASTRO DESCONTINUADO!", "MENU", JOptionPane.ERROR_MESSAGE);
+                exibeMensagem("OPERACAO INVALIDA, CADASTRO DESCONTINUADO!", "MENU", JOptionPane.ERROR_MESSAGE);
                 run();
             }else {
                 cadastraVeiculo(opcao);
@@ -51,19 +40,31 @@ public class Main {
     }
 
     private static void cadastraVeiculo(Object tipo){
-        String modelo = JOptionPane.showInputDialog(
-                null, "DIGITE O MODELO: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-        String cor = JOptionPane.showInputDialog(
-                null, "DIGITE A COR: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-        String combustivel = JOptionPane.showInputDialog(
-                null, "DIGITE O TIPO DE COMBUSTIVEL: ", "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
-        double valor = Double.parseDouble(JOptionPane.showInputDialog(
-                null,"DIGITE O VALOR: R$", "INFORMACAO", JOptionPane.QUESTION_MESSAGE));
+        String modelo = exibePerguntaRecebeResposta("DIGITE O MODELO: ");
+        String cor = exibePerguntaRecebeResposta("DIGITE A COR: ");
+        String combustivel = exibePerguntaRecebeResposta("DIGITE O TIPO DE COMBUSTIVEL: ");
+        double valor = Double.parseDouble(exibePerguntaRecebeResposta("DIGITE O VALOR: R$"));
 
         if(tipo.equals("CARRO")) {
             controller.add(new Carro(modelo, cor, combustivel, valor));
         }else {
             controller.add(new Motocicleta(modelo, cor, combustivel, valor));
         }
+    }
+
+    private static String exibePerguntaRecebeResposta(String message){
+        return JOptionPane.showInputDialog(null, message, "INFORMACAO", JOptionPane.QUESTION_MESSAGE);
+    }
+
+    private static void exibeMensagem(String message, String title){
+        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private static void exibeMensagem(String message, String title, int option){
+        JOptionPane.showMessageDialog(null, message, title, option);
+    }
+
+    private static Object exibeMenuRecebeResposta(String message, String title, Object[] opcoes) {
+        return JOptionPane.showInputDialog(null, message, title, JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
     }
 }
