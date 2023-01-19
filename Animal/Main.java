@@ -16,7 +16,7 @@ public class Main {
 		);
 	}
 
-	public static String exibePerguntaRecebeResposta(String message, String title){
+	private static String exibePerguntaRecebeResposta(String message, String title){
 		return JOptionPane.showInputDialog(null, message, title, JOptionPane.QUESTION_MESSAGE);
 	}
 }
