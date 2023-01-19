@@ -4,36 +4,39 @@ import javax.swing.*;
 
 public class Main{
     public static void main(String[] args){
-        int opcao = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "[1] - CARRO  |  [2] - MOTOCICLETA  |  [3] - CAMINHAO\n\nDIGITE O QUE DESEJA CADASTRAR: ",
-                "MENU", JOptionPane.INFORMATION_MESSAGE
-        ));
+        int opcao = Integer.parseInt(exibePerguntaRecebeResposta("[1] - CARRO  |  [2] - MOTOCICLETA  |  [3] - CAMINHAO\n\nDIGITE O QUE DESEJA CADASTRAR: "));
 
         if(opcao != 1 && opcao != 2 && opcao != 3){
-            JOptionPane.showMessageDialog(
-                    null, "OPCAO INVALIDA!", "MENU", JOptionPane.ERROR_MESSAGE);
+            exibeMensagem("OPCAO INVALIDA!", "MENU", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
 
-        String modelo = JOptionPane.showInputDialog(
-                null,"DIGITE O MODELO: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
-        String marca = JOptionPane.showInputDialog(
-                null, "DIGITE A MARCA: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
+        String modelo = exibePerguntaRecebeResposta("DIGITE O MODELO: ");
+        String marca = exibePerguntaRecebeResposta("DIGITE A MARCA: ");
 
         if(opcao == 1 || opcao == 2){
-            String cor = JOptionPane.showInputDialog(
-                    null, "DIGITE A COR: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE);
+            String cor = exibePerguntaRecebeResposta("DIGITE A COR: ");
 
-            if(opcao == 1) apresentaVeiculo(new Carro(modelo, marca, cor));
-            else apresentaVeiculo(new Moto(modelo, marca, cor));
+            if(opcao == 1)
+                exibeMensagem(new Carro(modelo, marca, cor).toString(), "REGISTRO");
+            else
+                exibeMensagem(new Moto(modelo, marca, cor).toString(), "REGISTRO");
         }else{
-            int potencia = Integer.parseInt(JOptionPane.showInputDialog(
-                    null,"DIGITE A POTENCIA: ", "INFORMACAO", JOptionPane.INFORMATION_MESSAGE));
-            apresentaVeiculo(new Caminhao(modelo, marca, potencia));
+            int potencia = Integer.parseInt(exibePerguntaRecebeResposta("DIGITE A POTENCIA: "));
+
+            exibeMensagem(new Caminhao(modelo, marca, potencia).toString(), "REGISTRO");
         }
     }
 
-    public static void apresentaVeiculo(Object veiculo){
-        JOptionPane.showMessageDialog(null, veiculo, "REGISTRO", JOptionPane.INFORMATION_MESSAGE);
+    public static String exibePerguntaRecebeResposta(String message){
+        return JOptionPane.showInputDialog(null, message,"INFORMACAO", JOptionPane.QUESTION_MESSAGE);
+    }
+
+    private static void exibeMensagem(String message, String title){
+        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void exibeMensagem(String message, String title, int option){
+        JOptionPane.showMessageDialog(null, message, title, option);
     }
 }
