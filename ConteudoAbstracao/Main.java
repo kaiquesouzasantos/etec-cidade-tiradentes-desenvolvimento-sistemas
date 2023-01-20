@@ -12,21 +12,14 @@ public class Main {
     public static void main(String[] args) {
         atribuiConteudo();
 
-        Object[] opcoes = {"TUDO", "FILMES", "SERIES"};
-
-        Object opcao = JOptionPane.showInputDialog(
-                null, "SELECIONE A LISTAGEM DESEJADA: ",
-                "MENU", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        Object opcao = exibeMenuRecebeResposta("SELECIONE A LISTAGEM DESEJADA: ", "MENU", new Object[]{"TUDO", "FILMES", "SERIES"});
 
         if(opcao.equals("FILMES"))
-            JOptionPane.showMessageDialog(
-                    null, controller.catalogo(new Filme()), "CATALOGO DE FILMES", JOptionPane.INFORMATION_MESSAGE);
+            exibeMensagem(controller.catalogo(new Filme()), "CATALOGO DE FILMES");
         else if(opcao.equals("SERIES"))
-            JOptionPane.showMessageDialog(
-                    null, controller.catalogo(new Serie()), "CATALOGO DE SERIES", JOptionPane.INFORMATION_MESSAGE);
+            exibeMensagem(controller.catalogo(new Serie()), "CATALOGO DE SERIES");
         else if(opcao.equals("TUDO"))
-            JOptionPane.showMessageDialog(
-                    null, controller.catalogo(), "CATALOGO", JOptionPane.INFORMATION_MESSAGE);
+            exibeMensagem(controller.catalogo(), "CATALOGO");
         else
             System.exit(0);
     }
@@ -49,5 +42,13 @@ public class Main {
                 new Serie("Epico", "Game of Thrones", 72, 73, 8),
                 new Serie("Epico", "Vikings", 45, 69, 6)
         ));
+    }
+
+    public static void exibeMensagem(String message, String title){
+        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static Object exibeMenuRecebeResposta(String message, String title, Object[] opcoes){
+        return JOptionPane.showInputDialog(null, message, title, JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
     }
 }
