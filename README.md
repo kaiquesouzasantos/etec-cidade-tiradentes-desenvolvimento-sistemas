@@ -31,9 +31,11 @@
 
 #
 ### TECNOLOGIAS
-- [Java](https://docs.oracle.com/en/java)
-- [Spring]()
-- [MongoDB]()
+![Java](https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=java&logoColor=white&labelColor=0D1117)&nbsp;
+![Spring](https://img.shields.io/badge/Spring-0D1117?style=for-the-badge&logo=spring&logoColor=107C10&labelColor=0D1117)&nbsp;
+![SpringBoot](https://img.shields.io/badge/Spring_Boot-0D1117?style=for-the-badge&logo=springboot&logoColor=239120&labelColor=0D1117)&nbsp;
+![Hibernate](https://img.shields.io/badge/Hibernate-0D1117?style=for-the-badge&logo=Hibernate&logoColor=239120&labelColor=0D1117)&nbsp;
+![MONGO DB](https://img.shields.io/badge/MongoDB-0D1117?style=for-the-badge&logo=mongodb&labelColor=0D1117)&nbsp;
 
 #
 ### CONTRIBUIÇÃO
