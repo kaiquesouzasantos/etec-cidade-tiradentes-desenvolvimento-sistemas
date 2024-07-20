@@ -5,13 +5,13 @@
 </p>
 
 #
-### SOBRE
+### 📚 SOBRE
 
 - Diretório contendo desenvolvimento dos exercícios na disciplina de Desenvolvimento de Sistemas(DS) na Etec Cidade Tiradentes em 2022.
 - Possui pequenos projetos submetidos como proposta de solução, com o intuito de atender aos requisitos solicitados.
 
 #
-### CONTEUDO ABORDADO
+### ⭐ CONTEUDO ABORDADO
 
 - Classes e Objetos;
 - Encapsulamento e Sobrecarga;
@@ -30,7 +30,7 @@
 - Thymeleaf, Stella e Lombok.
 
 #
-### TECNOLOGIAS
+### 💻 TECNOLOGIAS
 ![Java](https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=java&logoColor=white&labelColor=0D1117)&nbsp;
 ![Spring](https://img.shields.io/badge/Spring-0D1117?style=for-the-badge&logo=spring&logoColor=107C10&labelColor=0D1117)&nbsp;
 ![SpringBoot](https://img.shields.io/badge/Spring_Boot-0D1117?style=for-the-badge&logo=springboot&logoColor=239120&labelColor=0D1117)&nbsp;
@@ -38,7 +38,7 @@
 ![MONGO DB](https://img.shields.io/badge/MongoDB-0D1117?style=for-the-badge&logo=mongodb&labelColor=0D1117)&nbsp;
 
 #
-### CONTRIBUIÇÃO
+### 🔗 CONTRIBUIÇÃO
 
 ```
 $ git clone https://github.com/kaiquesouzasantos/etec199-2022-ds.git 
