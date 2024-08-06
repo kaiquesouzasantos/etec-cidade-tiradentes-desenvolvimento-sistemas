@@ -1,4 +1,4 @@
-<h1 align=center>ETEC199-2022-DS</h1>
+<h1 align=center>🌇 ETEC CIDADE TIRADENTES - DESENVOLVIMENTO DE SISTEMAS</h1>
 
 <p align="center">
   <img src="etec_l.png" width="500">
@@ -41,5 +41,5 @@
 ### 🔗 CONTRIBUIÇÃO
 
 ```
-$ git clone https://github.com/kaiquesouzasantos/etec199-2022-ds.git 
+$ git clone https://github.com/kaiquesouzasantos/etec-cidade-tiradentes-desenvolvimento-sistemas.git 
 ```
